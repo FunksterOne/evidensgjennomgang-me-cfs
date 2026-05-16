@@ -187,10 +187,45 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
 .footer-inner{padding:2.75rem 0}
 .footer-tag{font-size:.875rem;color:var(--color-text-tertiary);max-width:50rem}
 .footer-version{margin-top:.9rem;font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);line-height:1.7}
+
+/* --- konsolidering: nye komponenter --- */
+.corestmt{border:1px solid var(--color-accent-primary);background:var(--color-accent-subtle);border-radius:var(--radius-xl);padding:1.5rem 1.7rem;margin:1.6rem 0}
+.corestmt .lab{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);color:var(--color-accent-primary);display:block;margin-bottom:.6rem}
+.corestmt p{margin:0;font-size:1.08rem;line-height:1.66;max-width:48rem;color:var(--color-text-primary)}
+.chain{display:flex;flex-wrap:wrap;gap:.5rem;align-items:stretch;margin:1.5rem 0 .4rem}
+.cnode{flex:1 1 160px;min-width:148px;border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);padding:.85rem .95rem;font-size:.85rem;line-height:1.46}
+.cnode .k{display:block;font-size:.66rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:.3rem;font-weight:700}
+.cnode.fin{background:var(--color-accent-subtle);border-color:var(--color-accent-primary)}
+.carrow{align-self:center;color:var(--color-text-tertiary);font-size:1.05rem}
+.chain-cap{font-size:.82rem;color:var(--color-text-tertiary);font-style:italic;margin:.55rem 0 0}
+.two{display:grid;gap:1rem;margin:1.2rem 0}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.two .pane{border:1px solid var(--color-surface-tertiary);border-radius:var(--radius-lg);padding:1rem 1.15rem}
+.two .pane h4{margin:.1rem 0 .55rem;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--color-text-tertiary);font-weight:700}
+.two .pane.do{background:var(--color-accent-subtle)}
+.two .pane.dont{background:var(--color-surface-secondary)}
+.two .pane ul{list-style:disc;margin:0;padding-left:1.15rem}
+.two .pane li{margin:.38rem 0;font-size:.9rem;color:var(--color-text-secondary)}
+tr.flagrow td{background:var(--color-badge-no-bg)}
+.vl{color:var(--color-badge-no);font-weight:600;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em}
+.etd{border:1px solid var(--color-surface-tertiary);border-radius:var(--radius-lg);overflow:hidden;margin:1.3rem 0}
+.etd .erow{display:grid;grid-template-columns:12.5rem 1fr;border-top:1px solid var(--color-surface-tertiary)}
+.etd .erow:first-child{border-top:0}
+.etd .ed{background:var(--color-surface-secondary);padding:.62rem .85rem;font-weight:600;font-size:.86rem}
+.etd .ev{padding:.62rem .9rem;font-size:.875rem;color:var(--color-text-secondary);line-height:1.55}
+.etd .ev .chip{vertical-align:middle}
+.gradbox{margin:1.3rem 0 .3rem}
+.gline{display:grid;grid-template-columns:13rem 1fr auto;align-items:center;gap:.9rem;margin:.5rem 0}
+.gline .gl{font-size:.8125rem;color:var(--color-text-secondary);font-family:var(--font-mono);line-height:1.35}
+.gtrack{background:var(--color-surface-tertiary);border-radius:9999px;height:1.15rem;overflow:hidden}
+.gfill{height:100%;border-radius:9999px;background:var(--color-bar-neutral)}
+.gfill.strong{background:var(--color-bar-psycho)}
+.gval{font-family:var(--font-mono);font-size:.8rem;font-weight:600;color:var(--color-text-primary)}
+@media(max-width:680px){.etd .erow{grid-template-columns:1fr}.chain{flex-direction:column}.carrow{align-self:start;transform:rotate(90deg);margin-left:1rem}.gline{grid-template-columns:1fr;gap:.25rem}}
+
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="container">
     <nav class="nav">
@@ -203,54 +238,24 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
       </div>
     </nav>
   </div>
-</header>
-
-<div class="tabbar">
-  <div class="tablist" role="tablist" aria-label="Dokumentdeler">
-    <button class="tab" role="tab" id="tab-funn" aria-controls="panel-funn" aria-selected="true">Funn</button>
-    <button class="tab" role="tab" id="tab-metode" aria-controls="panel-metode" aria-selected="false">Metode og kilder</button>
-  </div>
+</header><div class="tabbar"><div class="tablist" role="tablist" aria-label="Dokumentdeler"><button class="tab" role="tab" id="tab-kjernen" aria-controls="panel-kjernen" aria-selected="true">Kjernen</button><button class="tab" role="tab" id="tab-overlapp" aria-controls="panel-overlapp" aria-selected="false">Funn 1 · Overlapp</button><button class="tab" role="tab" id="tab-effekt" aria-controls="panel-effekt" aria-selected="false">Funn 2 · Effekt</button><button class="tab" role="tab" id="tab-populasjon" aria-controls="panel-populasjon" aria-selected="false">Funn 3 · Populasjon</button><button class="tab" role="tab" id="tab-nice" aria-controls="panel-nice" aria-selected="false">Funn 4 · NICE NG206</button><button class="tab" role="tab" id="tab-etd" aria-controls="panel-etd" aria-selected="false">GRADE-EtD & anbefalinger</button><button class="tab" role="tab" id="tab-metode" aria-controls="panel-metode" aria-selected="false">Metode og kilder</button></div></div><main><div class="panel" id="panel-kjernen" role="tabpanel" aria-labelledby="tab-kjernen"><section class="hero"><div class="ellipse" aria-hidden="true"></div><div class="container"><p class="eyebrow">Sammenstilt gjennomgang</p><h1>Evidensgrunnlaget i ME/CFS-retningslinjen — hva en uavhengig gjennomgang viser</h1><p class="hero-lede">Høringsfristen gikk ut 4. mai 2026. Dette er etterarbeid: en systematisk gjennomgang av forskningsgrunnlaget, ført i pennen så det kan sendes som supplerende innspill. Begynn her — kjernepåstand, argumentkjede og hva vi påstår, og ikke påstår.</p><p class="hero-meta">Gjelder Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Etterarbeid etter høring (frist 4.05.2026) · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p><nav class="toc" aria-label="Innhold" style="margin-top:1.5rem"><a href="#k-core"><span class="n">•</span>Kjernepåstand og argumentkjede</a><a href="#ikke"><span class="n">•</span>Det vi ikke påstår</a><a href="#lesveiledning"><span class="n">•</span>Tre slags funn</a><a href="#status"><span class="n">•</span>Status etter høringen</a><a href="#betyr"><span class="n">•</span>Hva betyr dette i praksis</a></nav></div></section><section class="section" id="k-core"><div class="container">
+<p class="eyebrow">Kjernen</p>
+<div class="corestmt"><span class="lab">Kjernepåstand</span>
+<p>De to forskningsoversiktene som bærer utkastets sentrale aktivitets- og atferdsanbefalinger er <strong>ikke uavhengige</strong>: de deler primærstudier, og flere kontraster telles to ganger under ulike merkelapper. Den sentrale effekten <strong>halveres mot en reell komparator</strong> og forsvinner på sikt, i en populasjon som i hovedsak <strong>ikke er den PEM-definerte ME-gruppen</strong>. Den eneste store retningslinjen som har GRADE-vurdert samme primærlitteratur — NICE NG206 — landet på lav/svært lav tillit og frarådet graderte treningsprogrammer. En sterk «bør»-anbefaling har dermed ikke dekning i grunnlaget slik det er beskrevet.</p></div>
+<h3>Argumentkjeden</h3>
+<div class="chain">
+<div class="cnode"><span class="k">Premiss 1</span>To «uavhengige» bærebjelker deler ≥7 RCT-er; tre kontraster har identisk effektstørrelse i begge — dobbelttelling.</div>
+<div class="carrow">→</div>
+<div class="cnode"><span class="k">Premiss 2</span>Effekten er ≈ −0,76 mot venteliste, men ≈ −0,34 mot reell komparator, og uten signifikans &gt; 2 år.</div>
+<div class="carrow">→</div>
+<div class="cnode"><span class="k">Premiss 3</span>Grunnlaget er Oxford/Fukuda/cut-off; ingen forsøk mandaterer PEM. Feil populasjon.</div>
+<div class="carrow">→</div>
+<div class="cnode"><span class="k">Ekstern test</span>NICE NG206, samme forsøk: lav/svært lav tillit; GET frarådet.</div>
+<div class="carrow">→</div>
+<div class="cnode fin"><span class="k">Konklusjon</span>Lav GRADE-tillit uten paradigmatisk unntak ⇒ «bør» ikke forsvarlig; betinget formulering / forskningsanbefaling.</div>
 </div>
-
-<main>
-
-<!-- ====================== PANEL: FUNN ====================== -->
-<div class="panel" id="panel-funn" role="tabpanel" aria-labelledby="tab-funn">
-  <section class="hero">
-    <div class="ellipse" aria-hidden="true"></div>
-    <div class="container">
-      <h1>Evidensgrunnlaget i ME/CFS-retningslinjen — hva en uavhengig gjennomgang viser</h1>
-      <p class="hero-lede">Høringsfristen for Helsedirektoratets retningslinjeutkast gikk ut 4. mai 2026. Dette er etterarbeid: en systematisk gjennomgang av forskningsgrunnlaget, basert på det som kom fram underveis i høringen. Forklart i klart språk, og ført i pennen slik at det kan sendes som supplerende innspill til Helsedirektoratet eller andre relevante instanser.</p>
-      <p class="hero-meta">Gjelder: Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Endelig retningslinje ventet ~10.08.2026 · Teknisk dokumentasjon: se fanen «Metode og kilder»</p>
-      <nav class="toc" aria-label="Innhold" style="margin-top:1.5rem">
-        <a href="#lesveiledning"><span class="n">A</span>Slik leser du dette</a>
-        <a href="#ikke"><span class="n">B</span>Det vi ikke påstår</a>
-        <a href="#status"><span class="n">C</span>Status etter høringen</a>
-        <a href="#funn1"><span class="n">1</span>Uker ble til måneder</a>
-        <a href="#funn2"><span class="n">2</span>Hva ble sammenlignet</a>
-        <a href="#funn3"><span class="n">3</span>Hvem ble studert</a>
-        <a href="#funn4"><span class="n">4</span>Hvor lenge varer det</a>
-        <a href="#funn5"><span class="n">5</span>Valg av kilder</a>
-        <a href="#brukerrep"><span class="n">D</span>Brukerorganisasjonene</a>
-        <a href="#betyr"><span class="n">E</span>Hva betyr dette</a>
-      </nav>
-    </div>
-  </section>
-
-  <section class="section" id="lesveiledning">
-    <div class="container">
-      <p class="eyebrow">Slik leser du dette</p>
-      <h2>Tre slags funn — fra harde fakta til faglig skjønn</h2>
-      <p class="lede">Ikke alle innvendinger er like sterke. Funnene er sortert i tre nivåer slik at du selv kan vurdere hvor tungt hvert punkt veier. Jo lenger til venstre, jo vanskeligere er det å være uenig — uansett ståsted i ME-debatten.</p>
-      <div class="layer-grid">
-        <div class="layer-card"><span class="chip chip-l1"><span class="chip-dot"></span>Nivå 1</span><h4>Etterprøvbare faktafeil</h4><p>Tall eller opplysninger som er direkte feil mot kilden de viser til. Kontrollerbart ved oppslag. Krever ingen faglig vurdering og ingen standpunkt.</p></div>
-        <div class="layer-card"><span class="chip chip-l2"><span class="chip-dot"></span>Nivå 2</span><h4>Indre selvmotsigelser</h4><p>Der utkastet motsier seg selv — for eksempel ulike tall i brødtekst og dokumentets egen tabell. Lett å etterprøve i selve dokumentet.</p></div>
-        <div class="layer-card"><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3</span><h4>Metodiske og kildemessige svakheter</h4><p>Vurderinger av forskningens kvalitet, hvem som ble studert og hvilke kilder som ble valgt bort. Her finnes faglig rom for uenighet — motargument oppgis alltid.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="ikke">
+<p class="chain-cap">Hvert premiss er reprodusert eller sidefestet i fanene som følger. Premiss 1 og 2 er etterprøvbare uten faglig skjønn.</p>
+</div></section><section class="section" id="ikke">
     <div class="container">
       <p class="eyebrow">Viktig for å forstå resten</p>
       <h2>Det vi ikke påstår</h2>
@@ -262,9 +267,18 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
       </div>
       <p class="muted">Vi påstår heller ikke at behandlingene aldri hjelper noen, eller at noen har handlet i vond tro. Poenget er smalere: at et kunnskapsgrunnlag bør beskrives korrekt og åpent.</p>
     </div>
-  </section>
-
-  <section class="section" id="status">
+  </section><section class="section" id="lesveiledning">
+    <div class="container">
+      <p class="eyebrow">Slik leser du dette</p>
+      <h2>Tre slags funn — fra harde fakta til faglig skjønn</h2>
+      <p class="lede">Ikke alle innvendinger er like sterke. Funnene er sortert i tre nivåer slik at du selv kan vurdere hvor tungt hvert punkt veier. Jo lenger til venstre, jo vanskeligere er det å være uenig — uansett ståsted i ME-debatten.</p>
+      <div class="layer-grid">
+        <div class="layer-card"><span class="chip chip-l1"><span class="chip-dot"></span>Nivå 1</span><h4>Etterprøvbare faktafeil</h4><p>Tall eller opplysninger som er direkte feil mot kilden de viser til. Kontrollerbart ved oppslag. Krever ingen faglig vurdering og ingen standpunkt.</p></div>
+        <div class="layer-card"><span class="chip chip-l2"><span class="chip-dot"></span>Nivå 2</span><h4>Indre selvmotsigelser</h4><p>Der utkastet motsier seg selv — for eksempel ulike tall i brødtekst og dokumentets egen tabell. Lett å etterprøve i selve dokumentet.</p></div>
+        <div class="layer-card"><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3</span><h4>Metodiske og kildemessige svakheter</h4><p>Vurderinger av forskningens kvalitet, hvem som ble studert og hvilke kilder som ble valgt bort. Her finnes faglig rom for uenighet — motargument oppgis alltid.</p></div>
+      </div>
+    </div>
+  </section><section class="section" id="status">
     <div class="container">
       <p class="eyebrow">Sammenhengen</p>
       <h2>Status etter høringen</h2>
@@ -275,9 +289,58 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
         <p>Et innspill står sterkere når det skiller <strong>etterprøvbar faktafeil</strong> (nivå 1–2) fra <strong>faglig vurdering</strong> (nivå 3). Strukturen her er laget slik at hvert punkt kan siteres presist med kilde. De eksakte kilde- og sidehenvisningene ligger under fanen <a href="#" data-tab="metode" style="color:var(--color-accent-primary);font-weight:600">Metode og kilder</a>.</p>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="funn1">
+  </section><section class="section" id="betyr">
+    <div class="container">
+      <p class="eyebrow">Oppsummering</p>
+      <h2>Hva betyr dette i praksis?</h2>
+      <p class="lede">Kort: forskningen er svakere og smalere enn retningslinjeteksten gir inntrykk av — men det betyr ikke at ingen kan ha nytte av tilbud som finnes.</p>
+      <p>Det betyr at <strong>påstanden om varig bedring over år ikke har dekning</strong> i tallene (funn 1 og 4), at <strong>tilleggseffekten mot et reelt alternativ er beskjeden</strong> (funn 2), og at <strong>studiene i stor grad ikke handler om den strenge, PEM-definerte ME-gruppen</strong> (funn 3). Det gir et legitimt grunnlag for å be om at usikkerheten kommer tydelig fram, og at anbefalingens styrke står i forhold til hvor svakt og indirekte kunnskapsgrunnlaget faktisk er.</p>
+      <div class="callout fair">
+        <h4>Balansert lest</h4>
+        <p>Vi fraråder ikke behandling og påstår ikke at noen bevisst har villedet. Funnene handler om <strong>presisjon og åpenhet</strong>: at et kunnskapsgrunnlag bør beskrives korrekt — riktig tidsenhet, riktig sammenligning, riktig pasientgruppe.</p>
+      </div>
+      <h3>Hvis du vil sende dette videre</h3>
+      <p>Høringsfristen er passert, men dokumentert, etterprøvbar informasjon kan fortsatt være relevant fram til endelig retningslinje (~10.08.2026) — som supplerende eller etterfølgende innspill til Helsedirektoratet, eller til andre relevante instanser. Du trenger ingen fagbakgrunn for å vise til de etterprøvbare punktene (nivå 1–2). De faglige vurderingene (nivå 3) bør gjengis som vurderinger. Eksakte kilde- og sidehenvisninger, metode og anbefalinger ligger under <a href="#" data-tab="metode" style="color:var(--color-accent-primary);font-weight:600">Metode og kilder</a>. Hva du faktisk mener, er opp til deg — dette gir grunnlaget, ikke konklusjonen.</p>
+    </div>
+  </section></div><div class="panel" id="panel-overlapp" role="tabpanel" aria-labelledby="tab-overlapp" hidden><section class="hero"><div class="ellipse" aria-hidden="true"></div><div class="container"><p class="eyebrow">Funn 1 — det hardeste</p><h1>Overlapp og dobbelttelling mellom de to bærebjelkene</h1><p class="hero-lede">Den enkeltinnvendingen som er vanskeligst å avvise: de to «uavhengige» oversiktene deler primærstudier, og tre kontraster telles to ganger med identisk effektstørrelse.</p><p class="hero-meta">Gjelder Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Etterarbeid etter høring (frist 4.05.2026) · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p><nav class="toc" aria-label="Innhold" style="margin-top:1.5rem"><a href="#o-matrix"><span class="n">•</span>Studie-for-studie-matrisen</a><a href="#funn5"><span class="n">•</span>Kildevalg — samme studie, to etiketter</a></nav></div></section><section class="section" id="o-matrix"><div class="container">
+<p class="eyebrow">Funn 1 — det hardeste</p>
+<h2>Studie-for-studie: overlapp og dobbelttelling</h2>
+<p class="lede">Utkastet hviler i hovedsak på Maas/Bermpohl 2024 (KAT) og Casson 2023 (aktivitetsregulering), fremstilt som gjensidig støttende. Reprodusert fra forfatternes åpne data deler de minst sju primær-RCT-er. Avgjørende: tre kontraster går inn i <strong>begge</strong> metaanalysene med matematisk identiske effektstørrelser — samme data talt to ganger under ulike merkelapper.</p>
+<div class="tbl-scroll"><table>
+<thead><tr><th>Studie</th><th class="num">Maas (KAT): g (komparator, kriterium)</th><th class="num">Casson (aktivitet): g [subgruppe, alder]</th><th>Merknad</th></tr></thead>
+<tbody>
+<tr class="flagrow"><td>Deale 1997</td><td class="num">−0,073 (psyk. placebo, Oxford)</td><td class="num">−0,073 [Pacing up, voksen]</td><td>Identisk g — samme kontrast to ganger</td></tr>
+<tr class="flagrow"><td>Knoop 2008</td><td class="num">−0,709 (venteliste, Fukuda)</td><td class="num">−0,708 [Pacing up, voksen]</td><td>Identisk g; venteliste i Maas</td></tr>
+<tr class="flagrow"><td>Wiborg 2015</td><td class="num">−1,074 (venteliste, Fukuda)</td><td class="num">−1,074 [Pacing up, voksen]</td><td>Identisk g; venteliste i Maas</td></tr>
+<tr><td>Friedberg 2013</td><td class="num">−0,382 (oppm.placebo, Fukuda)</td><td class="num">−0,391 [Pacing, voksen]</td><td>Tilnærmet identisk</td></tr>
+<tr class="flagrow"><td>White 2011 (PACE)</td><td class="num">−0,339 (TAU, Oxford)</td><td class="num">−0,043 [Pacing] / −0,332 [Pacing up]</td><td>Samme forsøk, 4 merkelapper (+GET i DEFACTUM)</td></tr>
+<tr><td>Prins 2001</td><td class="num">−0,533 (TAU, Fukuda)</td><td class="num">−0,336 [Pacing up, voksen]</td><td>Delt; ulik arm trukket ut</td></tr>
+<tr><td>Jason 2007</td><td class="num">(ikke i utmattelse-etter-settet)</td><td class="num">+0,256 [Pacing] / −0,193 [Pacing up]</td><td>Delt på oversiktsnivå</td></tr>
+<tr class="flagrow"><td>Al-Haggar 2006</td><td class="num">—</td><td class="num">−1,420 [Pacing up, <strong>barn</strong>]</td><td>Pediatrisk; protokoll registrert for voksne</td></tr>
+<tr class="flagrow"><td>Stulemeijer 2005</td><td class="num">—</td><td class="num">−0,896 [Pacing up, <strong>barn</strong>]</td><td>Pediatrisk; dokumentert protokollavvik</td></tr>
+</tbody>
+<caption>Reproduserte Hedges&rsquo; g fra OSF (Maas wq4gj · Casson bk7t2). Maas poolet g = −0,512 (k=11); Casson subgrupper pacing −0,302 / gradert økning −0,643. Uthevede rader: samme eller tilnærmet samme kontrast i begge oversikter. Detaljert proveniens og skript: fanen «Metode og kilder», §3 og §12.</caption>
+</table></div>
+<div class="callout care"><h4>Hva dette betyr — og ikke betyr</h4><p>Funnet er ikke at noen har handlet i vond tro, og ikke at delte forfatternettverk i seg selv er inhabilitet. Poenget er smalere og etterprøvbart: <strong>to kilder som deler primærstudier og teller de samme kontrastene om igjen, utgjør ikke uavhengig bekreftelse</strong> — og bør ikke vektes som om de gjorde det.</p></div>
+</div></section><section class="section" id="funn5">
+    <div class="container">
+      <p class="eyebrow">Funn 5</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 05</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · dokumentert fra begge lands kildedokumenter</span></div>
+        <h3>Hvilke kilder ble valgt — og valgt bort?</h3>
+        <p>Å lage en retningslinje krever valg av hvilke forskningsoversikter man stoler på. Disse valgene er ikke alltid konsekvente.</p>
+        <dl class="fr">
+          <dt>Streng terskel</dt><dd>En anerkjent Cochrane-oversikt om treningsbehandling (Larun&nbsp;2019) — vurdert til <strong>høy kvalitet</strong> av danske myndigheter — ble <strong>ekskludert</strong> fra det norske grunnlaget.</dd>
+          <dt>Mild terskel</dt><dd>Samtidig ble en svakere oversikt (Casson&nbsp;2023) <strong>beholdt som bærebjelke</strong>, til tross for et dokumentert avvik fra sin egen forhåndsregistrerte plan (registrert kun for voksne, gjennomført med to barnestudier).</dd>
+          <dt>Samme studie, to etiketter</dt><dd>Den store PACE-studien telles som «treningsterapi» i den danske gjennomgangen, men som «aktivitetsregulering» i den norske — avhengig av hvilken paraplyoversikt som brukes.</dd>
+        </dl>
+        <div class="callout care" style="margin-bottom:0">
+          <h4>Hva som taler imot oss her</h4>
+          <p>Å ekskludere Larun&nbsp;2019 <em>isolert sett</em> kan forsvares faglig. Funnet er ikke at eksklusjonen er feil, men at <strong>terskelen er ulik</strong>: strengest prøving på den høyest vurderte oversikten, mildest på en svakere. Vi nevner også at danske myndigheter vurderte den andre bærebjelken til «høy kvalitet», mens vår gjennomgang lander på «lav» — en reell faglig uenighet, oppgitt åpent (se §8).</p>
+        </div>
+      </div>
+    </div>
+  </section></div><div class="panel" id="panel-effekt" role="tabpanel" aria-labelledby="tab-effekt" hidden><section class="hero"><div class="ellipse" aria-hidden="true"></div><div class="container"><p class="eyebrow">Funn 2 — effekt og varighet</p><h1>Hva ble sammenlignet, og hvor lenge varer det</h1><p class="hero-lede">Tallene reproduserer — men effekten halveres mot et reelt alternativ, varigheten er oppgitt i feil enhet, og de lengste oppfølgingene viser ingen effekt.</p><p class="hero-meta">Gjelder Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Etterarbeid etter høring (frist 4.05.2026) · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p><nav class="toc" aria-label="Innhold" style="margin-top:1.5rem"><a href="#funn1"><span class="n">•</span>Måneder/uker-feilen</a><a href="#funn2"><span class="n">•</span>Komparator avgjør alt</a><a href="#e-grad"><span class="n">•</span>Komparatorgradienten</a><a href="#funn4"><span class="n">•</span>Hvor lenge varer effekten</a></nav></div></section><section class="section" id="funn1">
     <div class="container">
       <p class="eyebrow">Funn 1 — det sterkeste</p>
       <div class="finding">
@@ -297,9 +360,7 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
         <div class="verify"><b>Kontrollert:</b> bekreftet fire uavhengige steder — primærartikkelens fotnote, retningslinjens egen evidenstabell (som korrekt sier «uker»), den danske DEFACTUM-rapporten, og forfatternes rådata. Eksakte sidehenvisninger: fanen «Metode og kilder», §4.</div>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="funn2">
+  </section><section class="section" id="funn2">
     <div class="container">
       <p class="eyebrow">Funn 2</p>
       <div class="finding">
@@ -318,31 +379,18 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
         <div class="verify"><b>Kontrollert:</b> forfatternes egne rådata kjørt gjennom deres egen analysekode. Detaljer: «Metode og kilder», §2.</div>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="funn3">
-    <div class="container">
-      <p class="eyebrow">Funn 3</p>
-      <div class="finding">
-        <div class="finding-head"><span class="finding-num">FUNN 03</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · bekreftet fra forfatternes datakoding</span></div>
-        <h3>Hvem ble egentlig studert?</h3>
-        <p>Mange identifiserer seg med en streng ME-definisjon der <em>forverring etter anstrengelse</em> (PEM) er et krav. Spørsmålet er om forskningen handler om denne gruppen.</p>
-        <dl class="fr">
-          <dt>Hva vi fant</dt><dd>I forfatternes egen koding er pasientene diagnostisert med eldre, bredere kriterier (Oxford og Fukuda). <strong>Ingen</strong> studie brukte de strenge kriteriene (Canada/ICC/NICE&nbsp;2021) der PEM er obligatorisk.</dd>
-          <dt>I praksis</dt><dd>Resultatene gjelder en bredere gruppe med langvarig utmattelse. Å overføre dem direkte til streng, PEM-definert ME er et tolkningssprang som ikke gjøres tydelig.</dd>
-        </dl>
-        <p style="margin-top:1rem"><span class="chip" style="background:var(--color-badge-no-bg);color:var(--color-badge-no)">PEM ikke krevd i noen inkludert studie</span></p>
-        <div class="callout care" style="margin:1rem 0 0">
-          <h4>Motforestilling — oppgitt åpent</h4>
-          <p>Det finnes et publisert mottrekk mot nettopp dette punktet. En individdata-metaanalyse (Kuut og kolleger, 2024; 8 forsøk, 1298 pasienter) fant <strong>ingen indikasjon på at pasienter som oppfyller strengere definisjoner eller rapporterer flere symptomer, har mindre nytte av KAT</strong>, og forfatterne argumenterer eksplisitt mot å nedgradere studier som ikke krever PEM. Dette taler imot vår indirekthetsinnvending og må veies inn.</p>
-          <p style="margin-bottom:0">Samtidig: analysen samler i hovedsak forsøk fra samme forskernettverk som Maas/Casson, moderator-/interaksjonsanalyser har lav styrke (fravær av påvist moderasjon er ikke det samme som påvist fravær), og PEM ble undersøkt som <em>moderator</em>, ikke som inklusjonskrav — ingen av de poolede forsøkene mandaterte PEM. Funnet svekker, men opphever ikke, indirekthetsforbeholdet. Primærsjekk og referanse: «Metode og kilder», §7b og §11.</p>
-        </div>
-        <div class="verify"><b>Kontrollert:</b> lest fra «diagnosekriterium»-kolonnen i forfatternes datasett; bekreftet i den andre oversiktens forhåndsregistrerte protokoll. Se §2–§3.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="funn4">
+  </section><section class="section" id="e-grad"><div class="container">
+<p class="eyebrow">Funn 2 — komparatorgradienten</p>
+<h2>Effekten halveres mot et reelt alternativ</h2>
+<p class="lede">Den poolede effekten for utmattelse etter KAT (g ≈ −0,51) skjuler en sterk komparatoravhengighet, datakonfirmert fra Maas&rsquo; egen kontrollgruppekoding. Mot inaktiv venteliste er effekten stor; mot et realistisk alternativ er den om lag halvert.</p>
+<div class="gradbox" role="img" aria-label="Mot venteliste cirka minus 0,76 (k=5); mot vanlig oppfølging cirka minus 0,34 (k=3); mot psykologisk placebo cirka minus 0,31 (k=2).">
+<div class="gline"><span class="gl">Venteliste (inaktiv), k=5</span><div class="gtrack"><div class="gfill strong" style="width:100%"></div></div><span class="gval">−0,759</span></div>
+<div class="gline"><span class="gl">TAU (aktiv/uspesifikk), k=3</span><div class="gtrack"><div class="gfill" style="width:45%"></div></div><span class="gval">−0,342</span></div>
+<div class="gline"><span class="gl">Psykologisk placebo, k=2</span><div class="gtrack"><div class="gfill" style="width:40%"></div></div><span class="gval">−0,306</span></div>
+<div class="gline"><span class="gl">Oppmerksomhetsplacebo, k=1</span><div class="gtrack"><div class="gfill" style="width:50%"></div></div><span class="gval">≈ −0,38</span></div>
+</div>
+<p>Mot de reneste komparatorene er enkelteffektene praktisk talt null (Deale 1997: −0,07; Huibers 2004: −0,12). De store effektene er uten unntak ventelistekontrollerte eller pediatriske. Langtidseffekten avtar (utmattelse g ≈ −0,42), og i forsøk med mer enn to års oppfølging er det ingen signifikant effekt. Utkastet rapporterer kun det poolede tallet ≈ −0,51. Komparator-stratifisert tabell med studienavn: «Metode og kilder», §2.</p>
+</div></section><section class="section" id="funn4">
     <div class="container">
       <p class="eyebrow">Funn 4</p>
       <div class="finding">
@@ -356,29 +404,7 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
         <div class="verify"><b>Kontrollert:</b> reproduserbart fra forfatternes datasett; resultatene var ikke statistisk signifikante. Se §2/§4.</div>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="funn5">
-    <div class="container">
-      <p class="eyebrow">Funn 5</p>
-      <div class="finding">
-        <div class="finding-head"><span class="finding-num">FUNN 05</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · dokumentert fra begge lands kildedokumenter</span></div>
-        <h3>Hvilke kilder ble valgt — og valgt bort?</h3>
-        <p>Å lage en retningslinje krever valg av hvilke forskningsoversikter man stoler på. Disse valgene er ikke alltid konsekvente.</p>
-        <dl class="fr">
-          <dt>Streng terskel</dt><dd>En anerkjent Cochrane-oversikt om treningsbehandling (Larun&nbsp;2019) — vurdert til <strong>høy kvalitet</strong> av danske myndigheter — ble <strong>ekskludert</strong> fra det norske grunnlaget.</dd>
-          <dt>Mild terskel</dt><dd>Samtidig ble en svakere oversikt (Casson&nbsp;2023) <strong>beholdt som bærebjelke</strong>, til tross for et dokumentert avvik fra sin egen forhåndsregistrerte plan (registrert kun for voksne, gjennomført med to barnestudier).</dd>
-          <dt>Samme studie, to etiketter</dt><dd>Den store PACE-studien telles som «treningsterapi» i den danske gjennomgangen, men som «aktivitetsregulering» i den norske — avhengig av hvilken paraplyoversikt som brukes.</dd>
-        </dl>
-        <div class="callout care" style="margin-bottom:0">
-          <h4>Hva som taler imot oss her</h4>
-          <p>Å ekskludere Larun&nbsp;2019 <em>isolert sett</em> kan forsvares faglig. Funnet er ikke at eksklusjonen er feil, men at <strong>terskelen er ulik</strong>: strengest prøving på den høyest vurderte oversikten, mildest på en svakere. Vi nevner også at danske myndigheter vurderte den andre bærebjelken til «høy kvalitet», mens vår gjennomgang lander på «lav» — en reell faglig uenighet, oppgitt åpent (se §8).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section">
     <div class="container">
       <p class="eyebrow">Oppsummert</p>
       <h2>Hva vi sjekket, og hva vi fant</h2>
@@ -398,9 +424,71 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
         </table>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="brukerrep">
+  </section></div><div class="panel" id="panel-populasjon" role="tabpanel" aria-labelledby="tab-populasjon" hidden><section class="hero"><div class="ellipse" aria-hidden="true"></div><div class="container"><p class="eyebrow">Funn 3 — populasjon</p><h1>Hvem ble egentlig studert</h1><p class="hero-lede">Resultatene gjelder en bred utmattelsesgruppe, ikke den strenge, PEM-definerte ME-gruppen. Det sterkeste publiserte mottrekket oppgis åpent.</p><p class="hero-meta">Gjelder Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Etterarbeid etter høring (frist 4.05.2026) · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p><nav class="toc" aria-label="Innhold" style="margin-top:1.5rem"><a href="#funn3"><span class="n">•</span>Hvem ble studert + Kuut-motforestilling</a><a href="#casson"><span class="n">•</span>Casson 2023 — status</a></nav></div></section><section class="section" id="funn3">
+    <div class="container">
+      <p class="eyebrow">Funn 3</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 03</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · bekreftet fra forfatternes datakoding</span></div>
+        <h3>Hvem ble egentlig studert?</h3>
+        <p>Mange identifiserer seg med en streng ME-definisjon der <em>forverring etter anstrengelse</em> (PEM) er et krav. Spørsmålet er om forskningen handler om denne gruppen.</p>
+        <dl class="fr">
+          <dt>Hva vi fant</dt><dd>I forfatternes egen koding er pasientene diagnostisert med eldre, bredere kriterier (Oxford og Fukuda). <strong>Ingen</strong> studie brukte de strenge kriteriene (Canada/ICC/NICE&nbsp;2021) der PEM er obligatorisk.</dd>
+          <dt>I praksis</dt><dd>Resultatene gjelder en bredere gruppe med langvarig utmattelse. Å overføre dem direkte til streng, PEM-definert ME er et tolkningssprang som ikke gjøres tydelig.</dd>
+        </dl>
+        <p style="margin-top:1rem"><span class="chip" style="background:var(--color-badge-no-bg);color:var(--color-badge-no)">PEM ikke krevd i noen inkludert studie</span></p>
+        <div class="callout care" style="margin:1rem 0 0">
+          <h4>Motforestilling — oppgitt åpent</h4>
+          <p>Det finnes et publisert mottrekk mot nettopp dette punktet. En individdata-metaanalyse (Kuut og kolleger, 2024; 8 forsøk, 1298 pasienter) fant <strong>ingen indikasjon på at pasienter som oppfyller strengere definisjoner eller rapporterer flere symptomer, har mindre nytte av KAT</strong>, og forfatterne argumenterer eksplisitt mot å nedgradere studier som ikke krever PEM. Dette taler imot vår indirekthetsinnvending og må veies inn.</p>
+          <p style="margin-bottom:0">Samtidig: analysen samler i hovedsak forsøk fra samme forskernettverk som Maas/Casson, moderator-/interaksjonsanalyser har lav styrke (fravær av påvist moderasjon er ikke det samme som påvist fravær), og PEM ble undersøkt som <em>moderator</em>, ikke som inklusjonskrav — ingen av de poolede forsøkene mandaterte PEM. Funnet svekker, men opphever ikke, indirekthetsforbeholdet. Primærsjekk og referanse: «Metode og kilder», §7b og §11.</p>
+        </div>
+        <div class="verify"><b>Kontrollert:</b> lest fra «diagnosekriterium»-kolonnen i forfatternes datasett; bekreftet i den andre oversiktens forhåndsregistrerte protokoll. Se §2–§3.</div>
+      </div>
+    </div>
+  </section><section class="section" id="casson">
+    <div class="container">
+      <p class="eyebrow">Oppdateres når fulltekst foreligger</p>
+      <h2>Casson 2023 — status for kvalitetsvurderingen</h2>
+      <p>Den ene bærebjelken for aktivitetsanbefalingen (Casson&nbsp;2023) er foreløpig kontrollert via forfatternes åpne data, kode og forhåndsregistrerte protokoll. To av seksten punkter i kvalitetssjekken krever den betalingsmurte fulltekstartikkelen.</p>
+      <div class="callout fair">
+        <p style="margin-bottom:.5rem"><strong>Allerede bekreftet:</strong> tallene reproduserer; dokumentert protokollavvik (registrert for voksne, gjennomført med barnestudier); uegnet kvalitetsverktøy (CONSORT brukt som kvalitetsmål).</p>
+        <p style="margin-bottom:0"><strong>Gjenstår fra fulltekst:</strong> liste over ekskluderte studier med begrunnelse; vurdering av publikasjonsskjevhet. Detaljert skjema: «Metode og kilder», §5.</p>
+      </div>
+    </div>
+  </section></div><div class="panel" id="panel-nice" role="tabpanel" aria-labelledby="tab-nice" hidden><section class="hero"><div class="ellipse" aria-hidden="true"></div><div class="container"><p class="eyebrow">Funn 4 — ekstern test</p><h1>NICE NG206 — samme primærlitteratur, sidefestet</h1><p class="hero-lede">Den eneste store retningslinjen som har GRADE-vurdert samme forsøk landet på lav/svært lav tillit og frarådet graderte treningsprogrammer. Full per-forsøk-tabell.</p><p class="hero-meta">Gjelder Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Etterarbeid etter høring (frist 4.05.2026) · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p><nav class="toc" aria-label="Innhold" style="margin-top:1.5rem"><a href="#n-table"><span class="n">•</span>Full per-forsøk GRADE-tabell + seleksjonsterskel</a></nav></div></section><section class="section" id="n-table"><div class="container">
+<p class="eyebrow">Funn 4 — ekstern test</p>
+<h2>NICE NG206 — samme primærlitteratur, motsatt konklusjon</h2>
+<p class="lede">NICEs retningslinje NG206 (2021) gjorde en egen GRADE-vurdering av i stor grad de samme primærforsøkene. Tabellen kobler hvert delt forsøk til NICEs egen klassifisering og den tilliten NICE ga utfallene i den komparasjonen forsøket inngår i.</p>
+<div class="tbl-scroll"><table>
+<thead><tr><th>Delt forsøk</th><th>NICE-klassifisering (komparasjon)</th><th>NG206-tillit</th><th>Nedgradert for</th><th class="num">Side</th></tr></thead>
+<tbody>
+<tr><td>Deale 1997</td><td>KAT vs psykologisk placebo / KAT-profilene</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">17; 81</td></tr>
+<tr><td>Knoop 2008</td><td>KAT vs vanlig oppfølging</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">89; 81</td></tr>
+<tr><td>Wiborg 2015</td><td>KAT vs vanlig oppfølging</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">64; 89</td></tr>
+<tr><td>Prins 2001</td><td>KAT vs vanlig oppfølging / relaksasjon</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">81 ff.</td></tr>
+<tr><td>Friedberg 2013</td><td>Selvhjelp/KAT (FSM)</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">78 ff.</td></tr>
+<tr><td>White 2011 (PACE)</td><td>KAT vs APT (99); KAT vs GET (103); GET vs APT (163)</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet (enkelte utfall LAV)</td><td class="num">99; 103; 163</td></tr>
+<tr><td>Jason 2007</td><td>KAT vs anaerob/kognitiv terapi (flerarms)</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">114; 118</td></tr>
+<tr><td>Al-Haggar 2006</td><td>KAT + biofeedback vs vanlig oppfølging (barn)</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet; alvorlig populasjonsindirekthet (1994 CDC, PEM ikke obligatorisk)</td><td class="num">9; 128–129</td></tr>
+<tr><td>Stulemeijer 2005</td><td>KAT (barn)</td><td><span class="vl">SVÆRT LAV</span></td><td>skjevhet, indirekthet, upresishet</td><td class="num">50; 126</td></tr>
+</tbody>
+<caption>Kilde: NICE NG206, [G] Evidence reviews for the non-pharmacological management of ME/CFS, oktober 2021 (ISBN 978-1-4731-4221-3). Sidetall = dokumentets egne sider. <strong>Viktig forbehold:</strong> NG206 tildeler GRADE per komparasjon/utfall, ikke per enkeltforsøk; tabellen kobler hvert delt forsøk til den/de komparasjonene det bidrar til og tilliten NICE ga der. Den samlede dommen for alle relevante komparasjoner er «lav til svært lav», overveiende svært lav (NG206 §3.2, s. 365).</caption>
+</table></div>
+<div class="callout care"><h4>Seleksjonsterskelen — sidefestet</h4><p>NICE ekskluderte Larun-Cochrane-oversikten nettopp fordi den poolet alle treningsformer og alle «passive» kontroller — ikke egnet for beslutninger (NG206 s. 7–8) — og Price-2008 KAT-Cochrane fordi ikke alle deltakere hadde ME/CFS (s. 8). NICE anså metaanalyse på tvers av ulike komparatorer og populasjoner som oftest uegnet (s. 366). Dette er den samme komparatorsammenslåingen Maas/Casson bygger på. Den norske seleksjonsasymmetrien (streng terskel på Larun, mild på svakere) er dokumentert under «Metode og kilder», §7–§8.</p></div>
+</div></section></div><div class="panel" id="panel-etd" role="tabpanel" aria-labelledby="tab-etd" hidden><section class="hero"><div class="ellipse" aria-hidden="true"></div><div class="container"><p class="eyebrow">Beslutningsgrunnlag</p><h1>GRADE-EtD domene for domene, og anbefalinger</h1><p class="hero-lede">Hvordan tillitsnivået og avveiningene leder fram til at anbefalingsstyrken bør revideres — og seks konkrete, nøytralt formulerte anbefalinger.</p><p class="hero-meta">Gjelder Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Etterarbeid etter høring (frist 4.05.2026) · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p><nav class="toc" aria-label="Innhold" style="margin-top:1.5rem"><a href="#etd-domains"><span class="n">•</span>Evidence-to-Decision</a><a href="#brukerrep"><span class="n">•</span>Brukerorganisasjonene (verdier)</a><a href="#etd-anbef"><span class="n">•</span>Anbefalinger A1–A6</a></nav></div></section><section class="section" id="etd-domains"><div class="container">
+<p class="eyebrow">GRADE-EtD</p>
+<h2>Evidence-to-Decision — domene for domene</h2>
+<p class="lede">Samlet vurdering etter GRADEs eget rammeverk. Hvert domene oppgis med retning og, der relevant, motforestilling. Brukerorganisasjonenes innspill hører hjemme i verdier/preferanser-domenet og er faktasjekket separat under.</p>
+<div class="etd">
+<div class="erow"><div class="ed">Risiko for skjevhet</div><div class="ev">Ublindede forsøk, selvrapporterte primærutfall; Casson brukte CONSORT + PEDro, ikke domeneverktøy. <span class="chip chip-l2"><span class="chip-dot"></span>nedgradering</span></div></div>
+<div class="erow"><div class="ed">Inkonsistens</div><div class="ev">Høy heterogenitet (utmattelse I²≈64 %; fysisk funksjon langtid I²≈77 %); sterk komparatorbetinget spredning. <span class="chip chip-l2"><span class="chip-dot"></span>nedgradering</span></div></div>
+<div class="erow"><div class="ed">Indirekthet</div><div class="ev">Oxford/Fukuda/cut-off, ingen forsøk mandaterer PEM; effekten bæres av GET-nær arm. Kuut 2024 svekker, men opphever ikke. <span class="chip" style="background:var(--color-badge-no-bg);color:var(--color-badge-no)"><span class="chip-dot"></span>alvorlig</span></div></div>
+<div class="erow"><div class="ed">Upresishet</div><div class="ev">Mot reell komparator er k lite (TAU k=3, placebo k=2). <span class="chip chip-l2"><span class="chip-dot"></span>nedgradering</span></div></div>
+<div class="erow"><div class="ed">Avhengighet</div><div class="ev">≥7 delte RCT-er, samme nettverk; høyest skårede oversikt (Larun «High») ekskludert, svakere beholdt. Ikke uavhengig bekreftelse.</div></div>
+<div class="erow"><div class="ed">Oppgradering</div><div class="ev">De eneste store effektene er venteliste-/pediatrisk-poolede; langtid avtar. Ingen basis for oppgradering.</div></div>
+<div class="erow"><div class="ed">EtD-balanse</div><div class="ev">Liten, usikker, avtagende nytte; ikke-triviell mulig skade (GET-nær driver); lav tillit; delte verdier (brukerorganisasjonsdissens); de sykeste underrepresentert.</div></div>
+</div>
+<div class="callout"><h4>Hvorfor styrken ikke følger av dette</h4><p>Et sterkt «bør» på lav tillit krever minst ett av GRADEs fem paradigmatiske unntak (livstruende situasjon; katastrofal skade ved alternativet; klar nettonytte tross lav tillit; ekvivalent nytte men ett alternativ klart dyrere/farligere; unngåelse av katastrofal skade — Andrews m.fl. 2013). Ingen foreligger her. Forsvarsanførselen — at EtD vekter klinisk erfaring og brukerverdier — er gyldig, men da bør avveiningen gjøres eksplisitt og etterprøvbar (jf. §6).</p></div>
+</div></section><section class="section" id="brukerrep">
     <div class="container">
       <p class="eyebrow">Brukerorganisasjonene</p>
       <h2>Hva brukerorganisasjonene påpekte — og hva kontrollen viser</h2>
@@ -427,38 +515,17 @@ details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-
         <p>Dette er en <strong>faktasjekk av evidenspunkter</strong>, ikke en tilslutning til organisasjonenes helhetlige syn. ME/CFS er et omstridt felt, og direktoratet har sin egen samlede begrunnelse (der klinisk erfaring og brukerverdier også veies inn). At seks av åtte evidenspunkter får støtte i direktoratets <em>eget</em> materiale, er likevel et etterprøvbart funn — og taler for at innspillene fortjener reell vurdering i den videre prosessen, ikke bare registrering.</p>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="betyr">
-    <div class="container">
-      <p class="eyebrow">Oppsummering</p>
-      <h2>Hva betyr dette i praksis?</h2>
-      <p class="lede">Kort: forskningen er svakere og smalere enn retningslinjeteksten gir inntrykk av — men det betyr ikke at ingen kan ha nytte av tilbud som finnes.</p>
-      <p>Det betyr at <strong>påstanden om varig bedring over år ikke har dekning</strong> i tallene (funn 1 og 4), at <strong>tilleggseffekten mot et reelt alternativ er beskjeden</strong> (funn 2), og at <strong>studiene i stor grad ikke handler om den strenge, PEM-definerte ME-gruppen</strong> (funn 3). Det gir et legitimt grunnlag for å be om at usikkerheten kommer tydelig fram, og at anbefalingens styrke står i forhold til hvor svakt og indirekte kunnskapsgrunnlaget faktisk er.</p>
-      <div class="callout fair">
-        <h4>Balansert lest</h4>
-        <p>Vi fraråder ikke behandling og påstår ikke at noen bevisst har villedet. Funnene handler om <strong>presisjon og åpenhet</strong>: at et kunnskapsgrunnlag bør beskrives korrekt — riktig tidsenhet, riktig sammenligning, riktig pasientgruppe.</p>
-      </div>
-      <h3>Hvis du vil sende dette videre</h3>
-      <p>Høringsfristen er passert, men dokumentert, etterprøvbar informasjon kan fortsatt være relevant fram til endelig retningslinje (~10.08.2026) — som supplerende eller etterfølgende innspill til Helsedirektoratet, eller til andre relevante instanser. Du trenger ingen fagbakgrunn for å vise til de etterprøvbare punktene (nivå 1–2). De faglige vurderingene (nivå 3) bør gjengis som vurderinger. Eksakte kilde- og sidehenvisninger, metode og anbefalinger ligger under <a href="#" data-tab="metode" style="color:var(--color-accent-primary);font-weight:600">Metode og kilder</a>. Hva du faktisk mener, er opp til deg — dette gir grunnlaget, ikke konklusjonen.</p>
-    </div>
-  </section>
-
-  <section class="section" id="casson">
-    <div class="container">
-      <p class="eyebrow">Oppdateres når fulltekst foreligger</p>
-      <h2>Casson 2023 — status for kvalitetsvurderingen</h2>
-      <p>Den ene bærebjelken for aktivitetsanbefalingen (Casson&nbsp;2023) er foreløpig kontrollert via forfatternes åpne data, kode og forhåndsregistrerte protokoll. To av seksten punkter i kvalitetssjekken krever den betalingsmurte fulltekstartikkelen.</p>
-      <div class="callout fair">
-        <p style="margin-bottom:.5rem"><strong>Allerede bekreftet:</strong> tallene reproduserer; dokumentert protokollavvik (registrert for voksne, gjennomført med barnestudier); uegnet kvalitetsverktøy (CONSORT brukt som kvalitetsmål).</p>
-        <p style="margin-bottom:0"><strong>Gjenstår fra fulltekst:</strong> liste over ekskluderte studier med begrunnelse; vurdering av publikasjonsskjevhet. Detaljert skjema: «Metode og kilder», §5.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ====================== PANEL: METODE OG KILDER ====================== -->
-<div class="panel" id="panel-metode" role="tabpanel" aria-labelledby="tab-metode" hidden>
+  </section><section class="section" id="etd-anbef"><div class="container">
+<p class="eyebrow">Anbefalinger</p>
+<h2>Konkrete, nøytralt formulerte anbefalinger til Helsedirektoratet</h2>
+<p>Formulert konstruktivt og innspill-klart for revisjon av evidensprofilen fram mot endelig retningslinje (~10.08.2026). Autoritativ ordlyd med kildehenvisninger står også i «Metode og kilder», §9.</p>
+<div class="reccard"><div class="rh"><span class="rn">A1</span><h4>Rett enhetsfeilen</h4></div><p>Endre «14 til 38 måneder» til korrekt enhet (uker; ≈14–48, snitt ≈31), i samsvar med egen evidenstabell, Maas-fotnoten, DEFACTUM og rådata.</p></div>
+<div class="reccard"><div class="rh"><span class="rn">A2</span><h4>Rapporter komparator-stratifiserte estimater</h4></div><p>Oppgi venteliste- vs. aktiv-komparator-effekt (≈−0,76 vs ≈−0,34), ikke kun det poolede tallet.</p></div>
+<div class="reccard"><div class="rh"><span class="rn">A3</span><h4>Synliggjør at oversiktene deler primærstudier</h4></div><p>Angi at de to bærebjelkene deler ≥7 RCT-er og at flere kontraster telles dobbelt; behandle dem ikke som uavhengig bekreftelse.</p></div>
+<div class="reccard"><div class="rh"><span class="rn">A4</span><h4>Synliggjør populasjons-indirekthet</h4></div><p>Angi at grunnlaget er Oxford/Fukuda/cut-off uten PEM-krav; ingen Canada/NICE-2021. Vurder nedgradering for indirekthet.</p></div>
+<div class="reccard"><div class="rh"><span class="rn">A5</span><h4>Harmoniser eller begrunn review-terskelen</h4></div><p>Forklar hvorfor en «High quality»-vurdert Cochrane-oversikt ekskluderes mens svakere kilder beholdes for samme domene.</p></div>
+<div class="reccard"><div class="rh"><span class="rn">A6</span><h4>Bring anbefalingsstyrken i samsvar med GRADE-tilliten</h4></div><p>Ved lav tillit og fravær av de fem unntakene: vurder betinget formulering eller forskningsanbefaling, eller gjør EtD-avveiningen eksplisitt. Omtal også at effekten avtar og at &gt;2-års-oppfølging ikke viser signifikant effekt.</p></div>
+</div></section></div><div class="panel" id="panel-metode" role="tabpanel" aria-labelledby="tab-metode" hidden>
   <section class="hero">
     <div class="ellipse" aria-hidden="true"></div>
     <div class="container">
@@ -992,11 +1059,7 @@ for a,y,grp,age,g in ru:
       <p class="tiny" style="margin-top:1rem">Avhengigheter: Python 3, <code>pyreadr</code>, <code>openpyxl</code>. Datafiler hentes fra OSF wq4gj (Maas) og bk7t2 (Casson). Ingen rådata er videredistribuert — skriptene laster fra de åpne arkivene.</p>
     </div>
   </section>
-</div>
-
-</main>
-
-<footer class="site-footer">
+</div></main><footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-tag">Uavhengig gjennomgang av evidensgrunnlaget i Helsedirektoratets retningslinjeutkast for langvarig utmattelse, inkl. ME/CFS (sak 24/13487). Etterarbeid etter høring (frist 4. mai 2026), ikke et høringssvar levert innen fristen.</div>
     <div class="footer-version">
@@ -1005,39 +1068,47 @@ for a,y,grp,age,g in ru:
       Endelig retningslinje ventet ~10.08.2026 · uavhengig dobbeltkontroll (helst re-kjøring i R) anbefales før formelt bruk
     </div>
   </div>
-</footer>
-
-<script>
-  (function(){
-    var tt=document.getElementById('theme-toggle');
-    if(tt)tt.addEventListener('click',function(){document.documentElement.classList.toggle('dark');});
-    var tabs=[['tab-funn','panel-funn'],['tab-metode','panel-metode']];
-    function activate(panelId){
-      tabs.forEach(function(p){
-        var btn=document.getElementById(p[0]),pan=document.getElementById(p[1]);
-        var on=(p[1]===panelId);
-        btn.setAttribute('aria-selected',on?'true':'false');
-        if(on){pan.removeAttribute('hidden');}else{pan.setAttribute('hidden','');}
-      });
-      window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
-    }
-    document.getElementById('tab-funn').addEventListener('click',function(){activate('panel-funn');});
-    document.getElementById('tab-metode').addEventListener('click',function(){activate('panel-metode');});
-    document.querySelectorAll('[data-tab]').forEach(function(el){
-      el.addEventListener('click',function(e){
-        e.preventDefault();
-        activate(el.getAttribute('data-tab')==='metode'?'panel-metode':'panel-funn');
-      });
+</footer><script>
+(function(){
+  var tt=document.getElementById('theme-toggle');
+  if(tt)tt.addEventListener('click',function(){document.documentElement.classList.toggle('dark');});
+  var T=[["tab-kjernen","panel-kjernen"],["tab-overlapp","panel-overlapp"],
+         ["tab-effekt","panel-effekt"],["tab-populasjon","panel-populasjon"],
+         ["tab-nice","panel-nice"],["tab-etd","panel-etd"],["tab-metode","panel-metode"]];
+  function activate(panelId){
+    T.forEach(function(p){
+      var b=document.getElementById(p[0]),pan=document.getElementById(p[1]);
+      if(!b||!pan)return;
+      var on=(p[1]===panelId);
+      b.setAttribute("aria-selected",on?"true":"false");
+      if(on){pan.removeAttribute("hidden");}else{pan.setAttribute("hidden","");}
     });
-    // keyboard arrows on tablist
-    var tl=document.querySelector('.tablist');
-    if(tl)tl.addEventListener('keydown',function(e){
-      if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
-      var f=document.getElementById('tab-funn'),m=document.getElementById('tab-metode');
-      var cur=document.activeElement;
-      var nxt=(cur===f)?m:f; nxt.focus(); nxt.click();
+    window.scrollTo({top:0,behavior:("instant"in window)?"instant":"auto"});
+  }
+  T.forEach(function(p){
+    var b=document.getElementById(p[0]);
+    if(b)b.addEventListener("click",function(){activate(p[1]);});
+  });
+  document.querySelectorAll("[data-tab]").forEach(function(el){
+    el.addEventListener("click",function(e){
+      e.preventDefault();
+      var v=el.getAttribute("data-tab");
+      var map={metode:"panel-metode",kjernen:"panel-kjernen",overlapp:"panel-overlapp",
+               effekt:"panel-effekt",populasjon:"panel-populasjon",nice:"panel-nice",
+               etd:"panel-etd"};
+      activate(map[v]||"panel-kjernen");
     });
-  })();
+  });
+  var tl=document.querySelector(".tablist");
+  if(tl)tl.addEventListener("keydown",function(e){
+    if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
+    var ids=T.map(function(p){return p[0];});
+    var cur=document.activeElement?ids.indexOf(document.activeElement.id):-1;
+    if(cur<0)return;
+    var nx=(e.key==="ArrowRight")?(cur+1)%ids.length:(cur-1+ids.length)%ids.length;
+    var nb=document.getElementById(ids[nx]); if(nb){nb.focus();nb.click();}
+  });
+})();
 </script>
 </body>
 </html>

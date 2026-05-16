@@ -2,3 +2,7 @@
 .vercel
 node_modules
 deploy.ps1
+_build_consolidated.py
+_verify.py
+_verify2.py
+index_pre_consolidation.html
