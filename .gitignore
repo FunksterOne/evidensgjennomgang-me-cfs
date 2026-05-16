@@ -6,5 +6,9 @@ _build_consolidated.py
 _verify.py
 _verify2.py
 _sprakvask.py
+_names.py
+_ctx.py
+_navn.py
 index_pre_consolidation.html
 index_pre_sprakvask.html
+index_pre_navn.html
