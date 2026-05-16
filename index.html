@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidensgrunnlaget i ME/CFS-retningslinjen — etterarbeid etter høring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-surface-primary:#f7f4ef;--color-surface-secondary:#efebe4;--color-surface-tertiary:#e6e1d8;--color-surface-quiet:#faf8f5;
+  --color-text-primary:#1a1815;--color-text-secondary:#5c5650;--color-text-tertiary:#8a8480;
+  --color-accent-primary:#3d5a44;--color-accent-hover:#2e4633;--color-accent-subtle:#e8ede9;
+  --color-evidence-e0:#2d5a3f;--color-evidence-e1:#4a7a5a;--color-evidence-e2:#a67b2c;--color-evidence-e3:#8a7060;
+  --color-bar-bio:#3d5a44;--color-bar-neutral:#8a7e70;--color-bar-psycho:#8b4a3a;
+  --color-badge-yes-bg:#e8ede9;--color-badge-yes:#3d5a44;--color-badge-un-bg:#f0ebe0;--color-badge-un:#b8943d;--color-badge-no-bg:#f2e8e6;--color-badge-no:#8b4a3a;
+  --font-serif:"Source Serif 4",Georgia,"Times New Roman",serif;--font-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --fs-h1-sm:34px;--fs-h1-md:42px;--fs-h1-lg:46px;
+  --radius-sm:.25rem;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--radius-2xl:1rem;
+  --tracking-tight:-.025em;--tracking-wide:.025em;--tracking-eyebrow:2px;--container-max:1080px;
+}
+html.dark{
+  --color-surface-primary:#141210;--color-surface-secondary:#1e1b18;--color-surface-tertiary:#2a2622;--color-surface-quiet:#181512;
+  --color-text-primary:#e8e4df;--color-text-secondary:#a09a92;--color-text-tertiary:#6b6560;
+  --color-accent-primary:#6b9b74;--color-accent-hover:#7dae86;--color-accent-subtle:#1e2820;
+  --color-evidence-e0:#3d8a5f;--color-evidence-e1:#5a9b6e;--color-evidence-e2:#c9a040;--color-evidence-e3:#8a7060;
+  --color-bar-bio:#6b9b74;--color-bar-neutral:#8a7e70;--color-bar-psycho:#c47060;
+  --color-badge-yes-bg:#1e2820;--color-badge-yes:#6b9b74;--color-badge-un-bg:#2a2318;--color-badge-un:#c9a84c;--color-badge-no-bg:#2a1c1a;--color-badge-no:#c47060;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:16px;line-height:1.62;background:var(--color-surface-primary);color:var(--color-text-primary);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;border:0;background:none;padding:0;cursor:pointer;color:inherit}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 3rem}}
+
+.site-header{border-bottom:1px solid var(--color-surface-tertiary);position:sticky;top:0;background:var(--color-surface-primary);z-index:30}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem;flex-wrap:wrap}
+.docmark{font-family:var(--font-serif);font-size:1.02rem;font-weight:600;letter-spacing:var(--tracking-tight);color:var(--color-text-primary)}
+.docmark .sub{display:block;font-family:var(--font-sans);font-size:.72rem;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.04em;margin-top:.1rem}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.status-pill{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:9999px;padding:.25rem .7rem;display:none}
+@media(min-width:760px){.status-pill{display:inline-block}}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;height:2.25rem;width:2.25rem;border-radius:var(--radius-lg);border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);color:var(--color-text-tertiary);transition:color .15s}
+.icon-btn:hover{color:var(--color-text-primary)}
+.icon-btn svg{width:1rem;height:1rem}
+
+/* tabs */
+.tabbar{border-bottom:1px solid var(--color-surface-tertiary);background:var(--color-surface-primary);position:sticky;top:64px;z-index:25}
+.tablist{display:flex;gap:.25rem;max-width:var(--container-max);margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.tablist{padding:0 3rem}}
+.tab{padding:.85rem 1.1rem;font-size:.9rem;font-weight:600;color:var(--color-text-tertiary);border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.tab:hover{color:var(--color-text-primary)}
+.tab[aria-selected="true"]{color:var(--color-accent-primary);border-color:var(--color-accent-primary)}
+.panel[hidden]{display:none}
+
+.hero{border-bottom:1px solid var(--color-surface-tertiary);padding:3.5rem 0 3rem;position:relative;overflow:hidden}
+.hero .ellipse{position:absolute;top:-180px;right:-160px;width:520px;height:520px;border-radius:50%;border:1px solid var(--color-accent-primary);opacity:.06;pointer-events:none}
+.hero .ellipse:after{content:"";position:absolute;inset:70px;border-radius:50%;border:1px solid var(--color-accent-primary)}
+.hero h1{font-family:var(--font-serif);font-size:var(--fs-h1-sm);font-weight:600;line-height:1.2;letter-spacing:var(--tracking-tight);max-width:48rem;margin:0}
+@media(min-width:640px){.hero h1{font-size:var(--fs-h1-md)}}
+@media(min-width:1024px){.hero h1{font-size:var(--fs-h1-lg)}}
+.hero-lede{margin-top:1.4rem;max-width:42rem;font-size:1.0625rem;line-height:1.7;color:var(--color-text-secondary)}
+.hero-meta{margin-top:1.6rem;font-size:.8125rem;color:var(--color-text-tertiary);font-family:var(--font-mono);line-height:1.7}
+
+.section{border-bottom:1px solid var(--color-surface-tertiary);padding:3rem 0}
+.eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);color:var(--color-text-tertiary);margin:0 0 .85rem}
+.section h2{font-family:var(--font-serif);font-size:1.6rem;font-weight:600;letter-spacing:var(--tracking-tight);margin:0 0 1rem;line-height:1.28}
+.section h3{font-family:var(--font-serif);font-size:1.18rem;font-weight:600;margin:1.7rem 0 .6rem}
+.section h4{font-size:.95rem;font-weight:700;margin:1.2rem 0 .5rem}
+.section p{max-width:46rem;margin:0 0 1rem}
+.section p.lede{font-size:1.0625rem;color:var(--color-text-secondary);max-width:46rem}
+.muted{color:var(--color-text-secondary)}
+.tiny{font-size:.8125rem;color:var(--color-text-tertiary)}
+strong{font-weight:600}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--color-surface-secondary);border:1px solid var(--color-surface-tertiary);border-radius:var(--radius-sm);padding:.05rem .35rem}
+
+.chip{display:inline-flex;align-items:center;gap:.4rem;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:var(--tracking-wide);padding:.2rem .7rem}
+.chip-l1{background:var(--color-badge-yes-bg);color:var(--color-badge-yes)}
+.chip-l2{background:var(--color-badge-un-bg);color:var(--color-badge-un)}
+.chip-l3{background:var(--color-surface-tertiary);color:var(--color-text-secondary)}
+.chip-dot{width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
+
+.toc{columns:2;column-gap:2.5rem;margin-top:1.1rem;font-size:.9rem;max-width:46rem}
+@media(max-width:640px){.toc{columns:1}}
+.toc a{display:block;color:var(--color-text-secondary);padding:.25rem 0;border-bottom:1px solid transparent;transition:.15s;break-inside:avoid}
+.toc a:hover{color:var(--color-accent-primary)}
+.toc a .n{font-family:var(--font-mono);font-size:.75rem;color:var(--color-text-tertiary);margin-right:.5rem}
+
+.layer-grid{display:grid;gap:1rem;margin-top:1.4rem}
+@media(min-width:760px){.layer-grid{grid-template-columns:repeat(3,1fr)}}
+.layer-card{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-xl);padding:1.3rem}
+.layer-card h4{font-family:var(--font-serif);font-size:1.02rem;font-weight:600;margin:.7rem 0 .45rem}
+.layer-card p{font-size:.875rem;color:var(--color-text-secondary);margin:0;line-height:1.6}
+
+.callout{border-radius:var(--radius-xl);padding:1.4rem 1.5rem;margin:1.4rem 0;border:1px solid var(--color-surface-tertiary);background:var(--color-surface-quiet)}
+.callout.fair{border-left:4px solid var(--color-accent-primary)}
+.callout.care{border-left:4px solid var(--color-evidence-e2)}
+.callout h4{font-family:var(--font-serif);font-size:1.05rem;font-weight:600;margin:0 0 .55rem}
+.callout p{font-size:.9375rem;margin:0 0 .55rem;color:var(--color-text-secondary)}
+.callout p:last-child{margin-bottom:0}
+
+.finding{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-2xl);padding:1.7rem;margin:1.5rem 0}
+.finding-head{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:.3rem}
+.finding-num{font-family:var(--font-mono);font-size:.8rem;color:var(--color-text-tertiary)}
+.finding h3{font-family:var(--font-serif);font-size:1.28rem;font-weight:600;margin:.3rem 0 1rem;line-height:1.3}
+.fr{display:grid;gap:.5rem 1rem;grid-template-columns:1fr;margin:1rem 0}
+@media(min-width:680px){.fr{grid-template-columns:max-content 1fr}}
+.fr dt{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-tertiary);font-weight:600;padding-top:.15rem}
+.fr dd{margin:0 0 .35rem;font-size:.9375rem;color:var(--color-text-secondary)}
+.verify{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--color-surface-tertiary);font-size:.8125rem;color:var(--color-text-tertiary)}
+.verify b{color:var(--color-text-secondary);font-weight:600}
+
+.scalewrap{margin:1.3rem 0 .3rem}
+.scale-row{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:1rem;margin:.5rem 0}
+.scale-label{font-size:.8125rem;color:var(--color-text-secondary);font-family:var(--font-mono);line-height:1.35}
+.scale-track{background:var(--color-surface-tertiary);border-radius:9999px;height:1.5rem;overflow:hidden}
+.scale-fill{height:100%;border-radius:9999px;display:flex;align-items:center;padding-left:.7rem;font-size:11px;font-weight:600;color:#fff;white-space:nowrap}
+.fill-real{background:var(--color-accent-primary)}
+.fill-claim{background:var(--color-bar-psycho)}
+.scale-cap{font-size:.75rem;color:var(--color-text-tertiary);margin-top:.5rem;font-family:var(--font-mono)}
+.cmp{margin:1.2rem 0 .3rem}.cmp-row{margin:.65rem 0}
+.cmp-top{display:flex;justify-content:space-between;font-size:.8125rem;color:var(--color-text-secondary);margin-bottom:.3rem}
+.cmp-top .val{font-family:var(--font-mono);font-weight:600;color:var(--color-text-primary)}
+.cmp-track{background:var(--color-surface-tertiary);border-radius:9999px;height:1.1rem;overflow:hidden}
+.cmp-fill{height:100%;border-radius:9999px}.cmp-a{background:var(--color-evidence-e2)}.cmp-b{background:var(--color-accent-primary)}
+
+.tbl-scroll{overflow-x:auto;margin:1.2rem 0}
+table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:560px}
+th,td{text-align:left;padding:.6rem .75rem;border-bottom:1px solid var(--color-surface-tertiary);vertical-align:top}
+thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-tertiary);font-weight:600;background:var(--color-surface-secondary)}
+tbody tr:hover{background:var(--color-surface-quiet)}
+td.num,th.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:var(--color-accent-primary);font-weight:600}.warn{color:var(--color-evidence-e2);font-weight:600}.neg{color:var(--color-bar-psycho);font-weight:600}
+caption{caption-side:bottom;font-size:.78rem;color:var(--color-text-tertiary);margin-top:.6rem;text-align:left;line-height:1.55}
+
+.prov{font-family:var(--font-mono);font-size:.8rem;line-height:1.7;background:var(--color-surface-secondary);border:1px solid var(--color-surface-tertiary);border-radius:var(--radius-lg);padding:1.1rem 1.25rem;color:var(--color-text-secondary);overflow-x:auto;margin:1rem 0;white-space:pre-wrap}
+.prov .k{color:var(--color-text-primary);font-weight:600}
+.anchor-card{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);padding:1rem 1.15rem;margin:.7rem 0;font-size:.9rem}
+.anchor-card .src{font-family:var(--font-mono);font-size:.78rem;color:var(--color-accent-primary);font-weight:600;display:block;margin-bottom:.3rem}
+.anchor-card .loc{font-family:var(--font-mono);font-size:.78rem;color:var(--color-text-tertiary)}
+.reccard{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);padding:1.1rem 1.25rem;margin:.75rem 0}
+.reccard .rh{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;margin-bottom:.4rem}
+.reccard .rn{font-family:var(--font-mono);font-size:.78rem;color:var(--color-text-tertiary)}
+.reccard h4{margin:0;font-family:var(--font-serif);font-size:1.02rem;font-weight:600}
+.reccard p{font-size:.9rem;color:var(--color-text-secondary);margin:.35rem 0 0}
+.changelog .row{display:grid;grid-template-columns:90px 1fr;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--color-surface-tertiary);font-size:.875rem}
+.changelog .v{font-family:var(--font-mono);font-size:.8rem;color:var(--color-accent-primary);font-weight:600}
+.changelog .d{color:var(--color-text-secondary)}
+
+.pending{border:1px dashed var(--color-evidence-e2);background:var(--color-badge-un-bg);border-radius:var(--radius-xl);padding:1.5rem;margin:1rem 0}
+.pending h3{font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin:.2rem 0 .5rem}
+.pending p{font-size:.9375rem;color:var(--color-text-secondary);margin:0 0 .6rem}
+
+.gloss{display:grid;gap:.85rem;margin-top:1.1rem}
+@media(min-width:760px){.gloss{grid-template-columns:1fr 1fr}}
+.gloss div{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);padding:.95rem 1.1rem}
+.gloss dt{font-weight:600;font-size:.9375rem;margin-bottom:.25rem}
+.gloss dd{margin:0;font-size:.875rem;color:var(--color-text-secondary);line-height:1.55}
+
+.reflist{display:flex;flex-direction:column;gap:.85rem;margin:1rem 0 1.5rem}
+.reflist li{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);padding:1rem 1.1rem;font-size:.9rem;line-height:1.55;color:var(--color-text-secondary)}
+.reflist li em{color:var(--color-text-primary);font-style:italic}
+.ref-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:var(--tracking-wide);color:var(--color-accent-primary);background:var(--color-accent-subtle);border-radius:9999px;padding:.15rem .6rem;margin-right:.5rem;margin-bottom:.4rem}
+.ref-links{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin-top:.6rem}
+.ref-links a{font-size:.8125rem;font-weight:600;color:var(--color-accent-primary);border-bottom:1px solid transparent;transition:.15s}
+.ref-links a:hover{border-color:var(--color-accent-primary)}
+.ref-note{font-size:.8125rem;color:var(--color-text-tertiary);max-width:46rem;line-height:1.6}
+
+details.code{border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);margin:.8rem 0;overflow:hidden}
+details.code summary{cursor:pointer;padding:.8rem 1.1rem;font-size:.9rem;font-weight:600;color:var(--color-text-primary);list-style:none}
+details.code summary::-webkit-details-marker{display:none}
+details.code summary:before{content:"▸ ";color:var(--color-accent-primary)}
+details.code[open] summary:before{content:"▾ "}
+details.code pre{margin:0;padding:1rem 1.15rem;border-top:1px solid var(--color-surface-tertiary);background:var(--color-surface-quiet);overflow-x:auto;font-family:var(--font-mono);font-size:.74rem;line-height:1.55;color:var(--color-text-secondary)}
+.dl-grid{display:grid;gap:.85rem;margin-top:1rem}
+@media(min-width:640px){.dl-grid{grid-template-columns:1fr 1fr}}
+.dl-card{display:flex;align-items:center;gap:.9rem;border:1px solid var(--color-surface-tertiary);background:var(--color-surface-secondary);border-radius:var(--radius-lg);padding:1rem 1.15rem;transition:border-color .15s}
+.dl-card:hover{border-color:var(--color-accent-primary)}
+.dl-card .ic{flex-shrink:0;width:2.25rem;height:2.25rem;border-radius:var(--radius-md);background:var(--color-accent-subtle);color:var(--color-accent-primary);display:flex;align-items:center;justify-content:center}
+.dl-card .ic svg{width:1.1rem;height:1.1rem}.dl-card .t{font-size:.9rem;font-weight:600;color:var(--color-text-primary)}.dl-card .s{font-family:var(--font-mono);font-size:.75rem;color:var(--color-text-tertiary)}
+
+.site-footer{border-top:1px solid var(--color-surface-tertiary)}
+.footer-inner{padding:2.75rem 0}
+.footer-tag{font-size:.875rem;color:var(--color-text-tertiary);max-width:50rem}
+.footer-version{margin-top:.9rem;font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);line-height:1.7}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <div class="docmark">Evidensgrunnlaget i ME/CFS-retningslinjen<span class="sub">Uavhengig gjennomgang · etterarbeid etter høring</span></div>
+      <div class="nav-right">
+        <span class="status-pill">Etterarbeid · 16.05.2026</span>
+        <button class="icon-btn" id="theme-toggle" aria-label="Bytt mørk modus" title="Bytt lys/mørk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="tablist" role="tablist" aria-label="Dokumentdeler">
+    <button class="tab" role="tab" id="tab-funn" aria-controls="panel-funn" aria-selected="true">Funn</button>
+    <button class="tab" role="tab" id="tab-metode" aria-controls="panel-metode" aria-selected="false">Metode og kilder</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ====================== PANEL: FUNN ====================== -->
+<div class="panel" id="panel-funn" role="tabpanel" aria-labelledby="tab-funn">
+  <section class="hero">
+    <div class="ellipse" aria-hidden="true"></div>
+    <div class="container">
+      <h1>Evidensgrunnlaget i ME/CFS-retningslinjen — hva en uavhengig gjennomgang viser</h1>
+      <p class="hero-lede">Høringsfristen for Helsedirektoratets retningslinjeutkast gikk ut 4. mai 2026. Dette er etterarbeid: en systematisk gjennomgang av forskningsgrunnlaget, basert på det som kom fram underveis i høringen. Forklart i klart språk, og ført i pennen slik at det kan sendes som supplerende innspill til Helsedirektoratet eller andre relevante instanser.</p>
+      <p class="hero-meta">Gjelder: Helsedirektoratets retningslinjeutkast, langvarig utmattelse inkl. ME/CFS (sak 24/13487) · Endelig retningslinje ventet ~10.08.2026 · Teknisk dokumentasjon: se fanen «Metode og kilder»</p>
+      <nav class="toc" aria-label="Innhold" style="margin-top:1.5rem">
+        <a href="#lesveiledning"><span class="n">A</span>Slik leser du dette</a>
+        <a href="#ikke"><span class="n">B</span>Det vi ikke påstår</a>
+        <a href="#status"><span class="n">C</span>Status etter høringen</a>
+        <a href="#funn1"><span class="n">1</span>Uker ble til måneder</a>
+        <a href="#funn2"><span class="n">2</span>Hva ble sammenlignet</a>
+        <a href="#funn3"><span class="n">3</span>Hvem ble studert</a>
+        <a href="#funn4"><span class="n">4</span>Hvor lenge varer det</a>
+        <a href="#funn5"><span class="n">5</span>Valg av kilder</a>
+        <a href="#brukerrep"><span class="n">D</span>Brukerorganisasjonene</a>
+        <a href="#betyr"><span class="n">E</span>Hva betyr dette</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" id="lesveiledning">
+    <div class="container">
+      <p class="eyebrow">Slik leser du dette</p>
+      <h2>Tre slags funn — fra harde fakta til faglig skjønn</h2>
+      <p class="lede">Ikke alle innvendinger er like sterke. Funnene er sortert i tre nivåer slik at du selv kan vurdere hvor tungt hvert punkt veier. Jo lenger til venstre, jo vanskeligere er det å være uenig — uansett ståsted i ME-debatten.</p>
+      <div class="layer-grid">
+        <div class="layer-card"><span class="chip chip-l1"><span class="chip-dot"></span>Nivå 1</span><h4>Etterprøvbare faktafeil</h4><p>Tall eller opplysninger som er direkte feil mot kilden de viser til. Kontrollerbart ved oppslag. Krever ingen faglig vurdering og ingen standpunkt.</p></div>
+        <div class="layer-card"><span class="chip chip-l2"><span class="chip-dot"></span>Nivå 2</span><h4>Indre selvmotsigelser</h4><p>Der utkastet motsier seg selv — for eksempel ulike tall i brødtekst og dokumentets egen tabell. Lett å etterprøve i selve dokumentet.</p></div>
+        <div class="layer-card"><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3</span><h4>Metodiske og kildemessige svakheter</h4><p>Vurderinger av forskningens kvalitet, hvem som ble studert og hvilke kilder som ble valgt bort. Her finnes faglig rom for uenighet — motargument oppgis alltid.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ikke">
+    <div class="container">
+      <p class="eyebrow">Viktig for å forstå resten</p>
+      <h2>Det vi ikke påstår</h2>
+      <p>Vi har lastet ned de to viktigste forskningsoversiktene retningslinjen bygger på, hentet forfatternes egne rådata og analysekode, og kjørt regnestykkene på nytt med deres egen metode.</p>
+      <div class="callout fair">
+        <h4>Tallene i evidenstabellene stemmer</h4>
+        <p>Reproduksjonen gir nesten nøyaktig de samme tallene som står i retningslinjens evidenstabeller. Det er <strong>ingen regnefeil og ingen tallmanipulasjon</strong> i selve tabellene. Det sier vi tydelig fordi det er riktig.</p>
+        <p>Uenigheten handler ikke om regnestykkene, men om fire andre ting: <strong>hva som ble sammenlignet med hva</strong>, <strong>hvem som faktisk ble studert</strong>, <strong>hvor lenge effekten varer</strong>, og <strong>hvilke kilder som ble valgt — og valgt bort</strong>.</p>
+      </div>
+      <p class="muted">Vi påstår heller ikke at behandlingene aldri hjelper noen, eller at noen har handlet i vond tro. Poenget er smalere: at et kunnskapsgrunnlag bør beskrives korrekt og åpent.</p>
+    </div>
+  </section>
+
+  <section class="section" id="status">
+    <div class="container">
+      <p class="eyebrow">Sammenhengen</p>
+      <h2>Status etter høringen</h2>
+      <p class="lede">Dette er ikke en dom over retningslinjen, og det er ikke et høringssvar levert innen fristen. Høringsfristen var <strong>4. mai 2026</strong>. Dette er <strong>etterarbeid</strong> — en gjennomgang av det evidensmessige som kom fram underveis, ført i pennen så det kan brukes videre.</p>
+      <p>Den endelige retningslinjen er ventet rundt <strong>10. august 2026</strong>. Fram til den vedtas, kan dokumentert, etterprøvbar informasjon fortsatt være relevant — som <strong>supplerende eller etterfølgende innspill til Helsedirektoratet</strong>, eller til <strong>andre relevante instanser</strong> (fagmiljøer, brukerorganisasjoner, tilsyns- eller klageorganer). Om og hvordan slikt vektlegges, avgjøres av mottaker; hensikten her er å gjøre grunnlaget tilgjengelig og etterprøvbart.</p>
+      <div class="callout fair">
+        <h4>Derfor er funnene sortert i nivåer</h4>
+        <p>Et innspill står sterkere når det skiller <strong>etterprøvbar faktafeil</strong> (nivå 1–2) fra <strong>faglig vurdering</strong> (nivå 3). Strukturen her er laget slik at hvert punkt kan siteres presist med kilde. De eksakte kilde- og sidehenvisningene ligger under fanen <a href="#" data-tab="metode" style="color:var(--color-accent-primary);font-weight:600">Metode og kilder</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funn1">
+    <div class="container">
+      <p class="eyebrow">Funn 1 — det sterkeste</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 01</span><span class="chip chip-l1"><span class="chip-dot"></span>Nivå 1 · etterprøvbar faktafeil</span></div>
+        <h3>«Uker» er blitt til «måneder» — varigheten er overdrevet rundt fire ganger</h3>
+        <p>Det enkleste og sterkeste funnet. Krever ingen fagkunnskap og ingen mening om ME.</p>
+        <dl class="fr">
+          <dt>Hva utkastet sier</dt><dd>At effekten ble fulgt opp «fra 14 til 38 <strong>måneder</strong>» — opptil drøyt tre år.</dd>
+          <dt>Hva kilden sier</dt><dd>Forskningsoversikten måler oppfølging i <strong>uker</strong>: i snitt rundt 31 uker (ca. sju måneder). Datafilen navngir hver studie med uketall (f.eks. «…_52w» = 52 uker).</dd>
+          <dt>I praksis</dt><dd>Retningslinjen får effekten til å høres ut som om den holder i flere år, mens dataene viser noen måneder. Varigheten er overdrevet med ca. <strong>4,3 ganger</strong>.</dd>
+        </dl>
+        <div class="scalewrap" role="img" aria-label="Kildene målte cirka 31 uker; utkastet beskriver 14 til 38 måneder, omtrent 4,3 ganger lenger.">
+          <div class="scale-row"><div class="scale-label">Det kildene<br>faktisk målte</div><div class="scale-track"><div class="scale-fill fill-real" style="width:19%">≈ 31 uker</div></div></div>
+          <div class="scale-row"><div class="scale-label">Det utkastet<br>beskriver</div><div class="scale-track"><div class="scale-fill fill-claim" style="width:88%">«14 til 38 måneder»</div></div></div>
+          <p class="scale-cap">Samme søyleskala. Differansen ≈ 4,3× overdreven varighet.</p>
+        </div>
+        <div class="verify"><b>Kontrollert:</b> bekreftet fire uavhengige steder — primærartikkelens fotnote, retningslinjens egen evidenstabell (som korrekt sier «uker»), den danske DEFACTUM-rapporten, og forfatternes rådata. Eksakte sidehenvisninger: fanen «Metode og kilder», §4.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funn2">
+    <div class="container">
+      <p class="eyebrow">Funn 2</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 02</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · reprodusert fra rådata</span></div>
+        <h3>Tallene stemmer — men hva som ble sammenlignet med hva, avgjør alt</h3>
+        <p>En behandling ser langt mer effektiv ut sammenlignet med «ingenting» enn med et reelt alternativ. I den viktigste oversikten er det dette som skjer.</p>
+        <dl class="fr">
+          <dt>Hva utkastet viser</dt><dd>Ett samletall for effekt på utmattelse (et standardmål kalt SMD, rundt &minus;0,52; større negativt tall = større bedring).</dd>
+          <dt>Bak tallet</dt><dd>Samletallet er et gjennomsnitt av to ulike situasjoner: mot <strong>venteliste</strong> er effekten stor; mot <strong>vanlig oppfølging</strong> er den omtrent <strong>halvert</strong>.</dd>
+          <dt>I praksis</dt><dd>Mot et realistisk alternativ er tilleggseffekten betydelig mindre enn samletallet antyder. Det halverte tallet er ikke i brødteksten.</dd>
+        </dl>
+        <div class="cmp" role="img" aria-label="Mot venteliste cirka minus 0,76; mot vanlig oppfølging cirka minus 0,34.">
+          <div class="cmp-row"><div class="cmp-top"><span>Mot venteliste (ingen behandling)</span><span class="val">&minus;0,76</span></div><div class="cmp-track"><div class="cmp-fill cmp-a" style="width:100%"></div></div></div>
+          <div class="cmp-row"><div class="cmp-top"><span>Mot vanlig oppfølging</span><span class="val">&minus;0,34</span></div><div class="cmp-track"><div class="cmp-fill cmp-b" style="width:45%"></div></div></div>
+        </div>
+        <div class="verify"><b>Kontrollert:</b> forfatternes egne rådata kjørt gjennom deres egen analysekode. Detaljer: «Metode og kilder», §2.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funn3">
+    <div class="container">
+      <p class="eyebrow">Funn 3</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 03</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · bekreftet fra forfatternes datakoding</span></div>
+        <h3>Hvem ble egentlig studert?</h3>
+        <p>Mange identifiserer seg med en streng ME-definisjon der <em>forverring etter anstrengelse</em> (PEM) er et krav. Spørsmålet er om forskningen handler om denne gruppen.</p>
+        <dl class="fr">
+          <dt>Hva vi fant</dt><dd>I forfatternes egen koding er pasientene diagnostisert med eldre, bredere kriterier (Oxford og Fukuda). <strong>Ingen</strong> studie brukte de strenge kriteriene (Canada/ICC/NICE&nbsp;2021) der PEM er obligatorisk.</dd>
+          <dt>I praksis</dt><dd>Resultatene gjelder en bredere gruppe med langvarig utmattelse. Å overføre dem direkte til streng, PEM-definert ME er et tolkningssprang som ikke gjøres tydelig.</dd>
+        </dl>
+        <p style="margin-top:1rem"><span class="chip" style="background:var(--color-badge-no-bg);color:var(--color-badge-no)">PEM ikke krevd i noen inkludert studie</span></p>
+        <div class="callout care" style="margin:1rem 0 0">
+          <h4>Motforestilling — oppgitt åpent</h4>
+          <p>Det finnes et publisert mottrekk mot nettopp dette punktet. En individdata-metaanalyse (Kuut og kolleger, 2024; 8 forsøk, 1298 pasienter) fant <strong>ingen indikasjon på at pasienter som oppfyller strengere definisjoner eller rapporterer flere symptomer, har mindre nytte av KAT</strong>, og forfatterne argumenterer eksplisitt mot å nedgradere studier som ikke krever PEM. Dette taler imot vår indirekthetsinnvending og må veies inn.</p>
+          <p style="margin-bottom:0">Samtidig: analysen samler i hovedsak forsøk fra samme forskernettverk som Maas/Casson, moderator-/interaksjonsanalyser har lav styrke (fravær av påvist moderasjon er ikke det samme som påvist fravær), og PEM ble undersøkt som <em>moderator</em>, ikke som inklusjonskrav — ingen av de poolede forsøkene mandaterte PEM. Funnet svekker, men opphever ikke, indirekthetsforbeholdet. Primærsjekk og referanse: «Metode og kilder», §7b og §11.</p>
+        </div>
+        <div class="verify"><b>Kontrollert:</b> lest fra «diagnosekriterium»-kolonnen i forfatternes datasett; bekreftet i den andre oversiktens forhåndsregistrerte protokoll. Se §2–§3.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funn4">
+    <div class="container">
+      <p class="eyebrow">Funn 4</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 04</span><span class="chip chip-l2"><span class="chip-dot"></span>Nivå 2 · utelatt fra brødteksten</span></div>
+        <h3>Hvor lenge varer effekten?</h3>
+        <p>Henger sammen med funn 1: ikke bare er «måneder» feil for «uker» — effekten ser også ut til å avta.</p>
+        <dl class="fr">
+          <dt>Hva dataene viser</dt><dd>Effekten er størst rett etter behandling, mindre ved senere oppfølging, og i de få studiene med <strong>mer enn to års</strong> oppfølging var det ingen målbar forskjell igjen.</dd>
+          <dt>I praksis</dt><dd>Bildet av varig bedring har svak dekning. De lengste oppfølgingene — som peker mot at effekten forsvinner — er ikke omtalt i brødteksten.</dd>
+        </dl>
+        <div class="verify"><b>Kontrollert:</b> reproduserbart fra forfatternes datasett; resultatene var ikke statistisk signifikante. Se §2/§4.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funn5">
+    <div class="container">
+      <p class="eyebrow">Funn 5</p>
+      <div class="finding">
+        <div class="finding-head"><span class="finding-num">FUNN 05</span><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3 · dokumentert fra begge lands kildedokumenter</span></div>
+        <h3>Hvilke kilder ble valgt — og valgt bort?</h3>
+        <p>Å lage en retningslinje krever valg av hvilke forskningsoversikter man stoler på. Disse valgene er ikke alltid konsekvente.</p>
+        <dl class="fr">
+          <dt>Streng terskel</dt><dd>En anerkjent Cochrane-oversikt om treningsbehandling (Larun&nbsp;2019) — vurdert til <strong>høy kvalitet</strong> av danske myndigheter — ble <strong>ekskludert</strong> fra det norske grunnlaget.</dd>
+          <dt>Mild terskel</dt><dd>Samtidig ble en svakere oversikt (Casson&nbsp;2023) <strong>beholdt som bærebjelke</strong>, til tross for et dokumentert avvik fra sin egen forhåndsregistrerte plan (registrert kun for voksne, gjennomført med to barnestudier).</dd>
+          <dt>Samme studie, to etiketter</dt><dd>Den store PACE-studien telles som «treningsterapi» i den danske gjennomgangen, men som «aktivitetsregulering» i den norske — avhengig av hvilken paraplyoversikt som brukes.</dd>
+        </dl>
+        <div class="callout care" style="margin-bottom:0">
+          <h4>Hva som taler imot oss her</h4>
+          <p>Å ekskludere Larun&nbsp;2019 <em>isolert sett</em> kan forsvares faglig. Funnet er ikke at eksklusjonen er feil, men at <strong>terskelen er ulik</strong>: strengest prøving på den høyest vurderte oversikten, mildest på en svakere. Vi nevner også at danske myndigheter vurderte den andre bærebjelken til «høy kvalitet», mens vår gjennomgang lander på «lav» — en reell faglig uenighet, oppgitt åpent (se §8).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Oppsummert</p>
+      <h2>Hva vi sjekket, og hva vi fant</h2>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>Vi sjekket</th><th>Resultat</th><th>Nivå</th></tr></thead>
+          <tbody>
+            <tr><td>Stemmer tallene i evidenstabellene?</td><td><span class="ok">Ja — reprodusert fra rådata</span></td><td>I direktoratets favør</td></tr>
+            <tr><td>«14&ndash;38 måneder» vs. kilden</td><td><span class="warn">Skal være uker (≈4,3× for mye)</span></td><td>Nivå 1</td></tr>
+            <tr><td>Brødtekst vs. dokumentets egen tabell</td><td><span class="warn">Motstridende tall flere steder</span></td><td>Nivå 2</td></tr>
+            <tr><td>Hva ble behandlingen sammenlignet med?</td><td><span class="warn">Effekt halveres mot reelt alternativ</span></td><td>Nivå 3</td></tr>
+            <tr><td>Hvem ble studert?</td><td><span class="warn">Ingen streng, PEM-definert ME-gruppe</span></td><td>Nivå 3</td></tr>
+            <tr><td>Hvor lenge varer effekten?</td><td><span class="warn">Avtar; borte etter &gt;2 år</span></td><td>Nivå 2–3</td></tr>
+            <tr><td>Ble kildene valgt konsekvent?</td><td><span class="warn">Ulik terskel for sterke vs. svake kilder</span></td><td>Nivå 3</td></tr>
+          </tbody>
+          <caption>«Nivå» viser hvor lett funnet er å etterprøve uavhengig av ståsted. Nivå 1 = hvem som helst kan kontrollere det.</caption>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="brukerrep">
+    <div class="container">
+      <p class="eyebrow">Brukerorganisasjonene</p>
+      <h2>Hva brukerorganisasjonene påpekte — og hva kontrollen viser</h2>
+      <p class="lede">Brukerorganisasjonene ga egne innspill underveis i prosessen. Dette dokumentet taler ikke på deres vegne. Det viser — nøytralt — hvor den uavhengige kontrollen mot direktoratets <em>egne</em> tabeller og primærkildene støtter de evidensrelaterte innspillene, og hvor den ikke gjør det.</p>
+      <p class="muted">Innspill tilskrevet slik de framkom: ME-foreningen (v/Schei), Norsk Covidforening (v/Mørch-Storstein) og ME-foreldrene (v/Thorsen). «Status» gjelder utelukkende det enkelte <strong>evidenspunktet</strong> målt mot direktoratets eget materiale — ikke organisasjonenes øvrige standpunkter.</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>Innspill (kort)</th><th>Reist av</th><th>Status mot direktoratets eget materiale</th></tr></thead>
+          <tbody>
+            <tr><td>For stor vekt på adferdsterapi med svak blinding, subjektive endepunkt, høyt frafall</td><td>Norsk Covidforening</td><td><span class="ok">Støttet</span> — direktoratets egne RoB-vurderinger og frafallstall</td></tr>
+            <tr><td>Avvik fra NICE 2021 / WHO uten forklaring</td><td>Norsk Covidforening, ME-foreldrene</td><td><span class="warn">Delvis</span> — divergensen ligger i kildevalg og anbefalingsretning, ikke i oppjusterte tall</td></tr>
+            <tr><td>Studier NICE vurderer lavt, vurderes «middels» i utkastet</td><td>ME-foreldrene</td><td><span class="warn">Delvis / motsatt</span> — mot DEFACTUM er utkastet tvert imot mer konservativt; treffer review-merking, ikke effekttallene</td></tr>
+            <tr><td>Små effekter; manglende effekt ved oppfølging kommer ikke fram</td><td>ME-foreningen</td><td><span class="ok">Støttet</span> — &gt;2-års nullresultat og varighetsfeilen bekreftet fra primærkildene</td></tr>
+            <tr><td>Manglende skille ME med PEM vs. utmattelse uten PEM; svakt PEM-grunnlag</td><td>ME-foreningen, ME-foreldrene, Norsk Covidforening</td><td><span class="ok">Støttet av utkastet selv</span> — egne fotnoter og kriteriekoding (ingen Canada/PEM)</td></tr>
+            <tr><td>Mandatet skulle bygge på NICE og todelt PEM-løp; forlatt</td><td>ME-foreldrene</td><td><span class="muted">Ikke etterprøvbart her</span> — prosessuelt, utenfor evidenskontrollen</td></tr>
+            <tr><td>Nerli-/Kysthospitalet-studien overrepresentert</td><td>Norsk Covidforening</td><td><span class="ok">Strukturelt bekreftet</span> — én av få PEM-relevante studier; forfatter er samtidig fag-dissent</td></tr>
+            <tr><td>Råd for de alvorligst syke svekket; gruppen underrepresentert i studiene</td><td>ME-foreldrene</td><td><span class="ok">Støttet av primærkildene</span> — Maas og DEFACTUM omtaler underrepresentasjon av de sykeste</td></tr>
+          </tbody>
+          <caption>Seks av åtte evidensrelaterte innspill er helt eller delvis støttet av direktoratets egne evidenstabeller og primærkildene. Det mest siterte (rad 3) er det minst presise — mot DEFACTUM er utkastet tvert imot mer konservativt.</caption>
+        </table>
+      </div>
+      <div class="callout care">
+        <h4>Hva dette er — og ikke er</h4>
+        <p>Dette er en <strong>faktasjekk av evidenspunkter</strong>, ikke en tilslutning til organisasjonenes helhetlige syn. ME/CFS er et omstridt felt, og direktoratet har sin egen samlede begrunnelse (der klinisk erfaring og brukerverdier også veies inn). At seks av åtte evidenspunkter får støtte i direktoratets <em>eget</em> materiale, er likevel et etterprøvbart funn — og taler for at innspillene fortjener reell vurdering i den videre prosessen, ikke bare registrering.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="betyr">
+    <div class="container">
+      <p class="eyebrow">Oppsummering</p>
+      <h2>Hva betyr dette i praksis?</h2>
+      <p class="lede">Kort: forskningen er svakere og smalere enn retningslinjeteksten gir inntrykk av — men det betyr ikke at ingen kan ha nytte av tilbud som finnes.</p>
+      <p>Det betyr at <strong>påstanden om varig bedring over år ikke har dekning</strong> i tallene (funn 1 og 4), at <strong>tilleggseffekten mot et reelt alternativ er beskjeden</strong> (funn 2), og at <strong>studiene i stor grad ikke handler om den strenge, PEM-definerte ME-gruppen</strong> (funn 3). Det gir et legitimt grunnlag for å be om at usikkerheten kommer tydelig fram, og at anbefalingens styrke står i forhold til hvor svakt og indirekte kunnskapsgrunnlaget faktisk er.</p>
+      <div class="callout fair">
+        <h4>Balansert lest</h4>
+        <p>Vi fraråder ikke behandling og påstår ikke at noen bevisst har villedet. Funnene handler om <strong>presisjon og åpenhet</strong>: at et kunnskapsgrunnlag bør beskrives korrekt — riktig tidsenhet, riktig sammenligning, riktig pasientgruppe.</p>
+      </div>
+      <h3>Hvis du vil sende dette videre</h3>
+      <p>Høringsfristen er passert, men dokumentert, etterprøvbar informasjon kan fortsatt være relevant fram til endelig retningslinje (~10.08.2026) — som supplerende eller etterfølgende innspill til Helsedirektoratet, eller til andre relevante instanser. Du trenger ingen fagbakgrunn for å vise til de etterprøvbare punktene (nivå 1–2). De faglige vurderingene (nivå 3) bør gjengis som vurderinger. Eksakte kilde- og sidehenvisninger, metode og anbefalinger ligger under <a href="#" data-tab="metode" style="color:var(--color-accent-primary);font-weight:600">Metode og kilder</a>. Hva du faktisk mener, er opp til deg — dette gir grunnlaget, ikke konklusjonen.</p>
+    </div>
+  </section>
+
+  <section class="section" id="casson">
+    <div class="container">
+      <p class="eyebrow">Oppdateres når fulltekst foreligger</p>
+      <h2>Casson 2023 — status for kvalitetsvurderingen</h2>
+      <p>Den ene bærebjelken for aktivitetsanbefalingen (Casson&nbsp;2023) er foreløpig kontrollert via forfatternes åpne data, kode og forhåndsregistrerte protokoll. To av seksten punkter i kvalitetssjekken krever den betalingsmurte fulltekstartikkelen.</p>
+      <div class="callout fair">
+        <p style="margin-bottom:.5rem"><strong>Allerede bekreftet:</strong> tallene reproduserer; dokumentert protokollavvik (registrert for voksne, gjennomført med barnestudier); uegnet kvalitetsverktøy (CONSORT brukt som kvalitetsmål).</p>
+        <p style="margin-bottom:0"><strong>Gjenstår fra fulltekst:</strong> liste over ekskluderte studier med begrunnelse; vurdering av publikasjonsskjevhet. Detaljert skjema: «Metode og kilder», §5.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====================== PANEL: METODE OG KILDER ====================== -->
+<div class="panel" id="panel-metode" role="tabpanel" aria-labelledby="tab-metode" hidden>
+  <section class="hero">
+    <div class="ellipse" aria-hidden="true"></div>
+    <div class="container">
+      <h1>Metode og kilder — teknisk dokumentasjon</h1>
+      <p class="hero-lede">For fagfolk, metodevurderere og Helsedirektoratet. Hvert funn kan etterprøves og re-kjøres uavhengig. Reproduksjonsskriptene er innebygd nederst (§12) og kan også lastes ned.</p>
+      <p class="hero-meta">Etterarbeid etter høring (frist 4.05.2026) · sak 24/13487 · endelig retningslinje ventet ~10.08.2026 · bibliografi verifisert mot PubMed</p>
+      <nav class="toc" aria-label="Innhold" style="margin-top:1.5rem">
+        <a href="#m-omfang"><span class="n">0</span>Formål og lesemåte</a>
+        <a href="#m-metode"><span class="n">1</span>Reproduksjonsmetodikk og proveniens</a>
+        <a href="#m-maas"><span class="n">2</span>Talltabell — Maas (KAT)</a>
+        <a href="#m-casson"><span class="n">3</span>Talltabell — Casson (aktivitet)</a>
+        <a href="#m-anker"><span class="n">4</span>Eksakt kildeforankring</a>
+        <a href="#m-amstar"><span class="n">5</span>AMSTAR-2 på itemnivå</a>
+        <a href="#m-grade"><span class="n">6</span>GRADE-EtD: styrkediskordans</a>
+        <a href="#m-robis"><span class="n">7</span>ROBIS / seleksjonsasymmetri</a>
+        <a href="#m-suppl"><span class="n">7b</span>Supplerende kilder (primærsjekk)</a>
+        <a href="#m-divergens"><span class="n">8</span>Inter-rater-divergens</a>
+        <a href="#m-anbef"><span class="n">9</span>Anbefalinger til direktoratet</a>
+        <a href="#m-forbehold"><span class="n">10</span>Forbehold og endringslogg</a>
+        <a href="#m-kilder"><span class="n">11</span>Kilder</a>
+        <a href="#m-vedlegg"><span class="n">12</span>Vedlegg: reproduksjonsskript</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" id="m-omfang">
+    <div class="container">
+      <p class="eyebrow">0 · Formål og lesemåte</p>
+      <h2>Hva dette er — og hvordan det skal leses</h2>
+      <p class="lede">Dokumentet skiller konsekvent <strong>bekreftet faktum</strong> fra <strong>faglig vurdering</strong> og angir for hvert funn nøyaktig hvor det kan etterprøves. Det er ikke en ny analyse, men en repakking av et allerede verifisert arbeid til siterbart format.</p>
+      <div class="callout fair">
+        <h4>Premiss som gjelder hele dokumentet</h4>
+        <p>Effekttallene i utkastets evidenstabeller <strong>reproduserer</strong> nøyaktig fra forfatternes egne data og metode. Ingen aritmetisk feil eller tallmanipulasjon. Dette sies eksplisitt fordi det er korrekt og taler i direktoratets favør. Kritikken ligger i komparatorvalg, populasjonsforankring, varighet og kildeseleksjon.</p>
+      </div>
+      <h4>Tre nivåer av etterprøvbarhet</h4>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Nivå</th><th>Type</th><th>Avhengig av faglig skjønn?</th><th>Eksempel</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip chip-l1"><span class="chip-dot"></span>Nivå 1</span></td><td>Etterprøvbar faktafeil</td><td>Nei — uavhengig av ståsted</td><td>Uker rapportert som måneder</td></tr>
+          <tr><td><span class="chip chip-l2"><span class="chip-dot"></span>Nivå 2</span></td><td>Indre selvmotsigelse</td><td>Nei — kontrollerbar i dokumentet</td><td>Brødtekst vs. egen evidenstabell</td></tr>
+          <tr><td><span class="chip chip-l3"><span class="chip-dot"></span>Nivå 3</span></td><td>Metodisk/kildemessig vurdering</td><td>Ja — etablerte verktøy; rom for uenighet</td><td>AMSTAR-2, kildeseleksjon</td></tr>
+        </tbody>
+        <caption>Lag-1-funn (særlig måneder/uker) er uavhengige av all AMSTAR-2-skjønn og overlever selv om man er uenig i kvalitetsskåringen i §5.</caption>
+      </table></div>
+      <h4>Status i prosessen</h4>
+      <p>Dette er <strong>etterarbeid</strong> etter at høringsfristen (4.05.2026) gikk ut — ikke en endelig dom. Endelig retningslinje ventet ~10.08.2026; sitat- og seleksjonssjekk re-kjøres mot endelig versjon (§10). Materialet kan inngå i supplerende/etterfølgende innspill til Helsedirektoratet eller andre relevante instanser; §9 er formulert for dette. Den attribuerte gjennomgangen av brukerorganisasjonenes innspill ligger under fanen «Funn» for å holde dette dokumentet rent metodisk.</p>
+    </div>
+  </section>
+
+  <section class="section" id="m-metode">
+    <div class="container">
+      <p class="eyebrow">1 · Metode og proveniens</p>
+      <h2>Reproduksjonsmetodikk</h2>
+      <p>Begge bærebjelkene er reprodusert fra forfatternes <strong>åpne</strong> data og analysekode. R var ikke tilgjengelig; analysene er reimplementert i Python med formler ekvivalente med <code>metafor</code>/<code>meta</code> slik forfatternes egne skript spesifiserer.</p>
+      <div class="prov"><span class="k">PROVENIENS</span>
+Casson 2023  · OSF-prosjekt bk7t2 · ActPac_data for analysis.xlsx, ActPac code for analysis.R,
+              Prospero protocol_CRD42016036087.pdf · nedlastet 16.05.2026
+Maas 2024    · OSF-prosjekt wq4gj · environment_CFS.RData (31×260), R-script_CFS.R
+              · protokoll OSF 2je7u · nedlastet 16.05.2026
+
+<span class="k">METODE (eksakt som forfatternes skript)</span>
+Effektmål   · SMD = Hedges' g, J = 1 − 3/(4·(n1+n2−2) − 1)
+Varians     · LS: v = 1/n1 + 1/n2 + g²/(2·(n1+n2))
+Modell      · tilfeldige effekter, τ² estimert med REML
+Casson      · subgrupper via pac_pacup ∈ {Pacing, Pacing up}; radutvalg = forfatternes R-script
+Maas        · metacont; data_post=[1,4,6,8,12,13,15,16,17,19,21,23,25,28,31],
+              data_FU12=[2,5,7,10,14,18,20,22,27,29], data_FUinf=[3,11,30] (R-indeksering)
+
+<span class="k">VIKTIG FORBEHOLD</span>
+Punktestimatene er verifiseringsmålet og reproduserer (§2–§3).
+Konfidensintervallene i reimplementeringen er en forenklet normal-approksimasjon
+og er IKKE verifiseringsmål — metafor/meta bruker eksakt CI (smalere).
+Statistikere bør re-kjøre CI i R mot originalkoden; punktestimatene er det robuste.</div>
+      <p class="tiny">Fullstendige skript er innebygd og nedlastbare (§12). <code>pyreadr</code> 0.5.6 leser <code>.RData</code> uten R.</p>
+    </div>
+  </section>
+
+  <section class="section" id="m-maas">
+    <div class="container">
+      <p class="eyebrow">2 · Maas / Bermpohl — KAT</p>
+      <h2>Side-ved-side: utkastets evidenstabell vs. reprodusert</h2>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Utfall</th><th class="num">Utkast (g)</th><th class="num">Reprodusert</th><th class="num">I²</th><th class="num">k</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Utmattelse, etter</td><td class="num">−0,52</td><td class="num">−0,512</td><td class="num">64,4 %</td><td class="num">11</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Fysisk funksjon (PHS), etter</td><td class="num">0,29</td><td class="num">+0,312</td><td class="num">65,4 %</td><td class="num">11</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Depresjon, etter</td><td class="num">−0,36</td><td class="num">−0,359</td><td class="num">0 %</td><td class="num">5</td><td><span class="ok">✓✓</span></td></tr>
+          <tr><td>Angst, etter</td><td class="num">−0,34</td><td class="num">−0,345</td><td class="num">0 %</td><td class="num">3</td><td><span class="ok">✓✓</span></td></tr>
+          <tr><td>Utmattelse, langtid</td><td class="num">−0,41</td><td class="num">−0,423</td><td class="num">57,9 %</td><td class="num">7</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Fysisk funksjon, langtid</td><td class="num">0,15</td><td class="num">+0,138</td><td class="num"><strong>76,8 %</strong></td><td class="num">8</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Depresjon, langtid</td><td class="num">−0,15</td><td class="num">−0,153</td><td class="num">0 %</td><td class="num">6</td><td><span class="ok">✓✓</span></td></tr>
+          <tr><td>Angst, langtid</td><td class="num">−0,20</td><td class="num">−0,196</td><td class="num">0 %</td><td class="num">5</td><td><span class="ok">✓</span></td></tr>
+        </tbody>
+        <caption>Reprodusert I² for fysisk funksjon langtid = 76,8 %. Utkastets brødtekst tilskriver I²=76,6 % feilaktig til «etter behandling» (reprodusert etter = 65,4 %); evidenstabellen plasserer det korrekt på langtid — selvmotsigelse på nivå 2.</caption>
+      </table></div>
+      <h3>Komparator-stratifisering (utmattelse, etter)</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Komparator</th><th class="num">g</th><th class="num">k</th><th>Studier</th></tr></thead>
+        <tbody>
+          <tr><td>Venteliste (inaktiv)</td><td class="num neg">−0,759</td><td class="num">5</td><td>Gotaas, Janse, Knoop, Rimes&amp;Wingrove, Wiborg</td></tr>
+          <tr><td>TAU (aktiv/uspesifikk)</td><td class="num warn">−0,342</td><td class="num">3</td><td>Huibers, Prins, White</td></tr>
+          <tr><td>Psykologisk placebo</td><td class="num">−0,306</td><td class="num">2</td><td>Deale, Milrad</td></tr>
+          <tr><td>Oppmerksomhetsplacebo</td><td class="num">—</td><td class="num">1</td><td>Friedberg (k=1)</td></tr>
+        </tbody>
+        <caption>Mot aktiv komparator er effekten ≈ −0,34 — omtrent halvparten av ventelisteeffekten. Utkastet rapporterer kun den poolede −0,52.</caption>
+      </table></div>
+      <h3>Diagnosekriterier (Maas' egen koding)</h3>
+      <p><code>diagnosis_criteria</code> tar kun verdiene <strong>OC (Oxford), CDC (Fukuda), «other» (cut-off)</strong>. Av 15 post-studier: 3 Oxford, 10 CDC/Fukuda, 2 cut-off. <strong>Null</strong> Canada/ICC/IOM/NICE-2021. Kriteriemismatchen er datakonfirmert, ikke utledet.</p>
+    </div>
+  </section>
+
+  <section class="section" id="m-casson">
+    <div class="container">
+      <p class="eyebrow">3 · Casson — aktivitet</p>
+      <h2>Side-ved-side: subgrupper (Casson 2023)</h2>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Utfall · subgruppe</th><th class="num">Utkast</th><th class="num">Reprodusert</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Utmattelse etter · pacing</td><td class="num">−0,33</td><td class="num">−0,302</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Utmattelse etter · gradert</td><td class="num">−0,65</td><td class="num">−0,643</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Utmattelse oppfølging · pacing</td><td class="num">−0,33</td><td class="num">−0,355</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Utmattelse oppfølging · gradert</td><td class="num">−0,32</td><td class="num">−0,340</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Fysisk funksjon etter · pacing (MD)</td><td class="num">5,12</td><td class="num">5,047</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Fysisk funksjon etter · gradert (MD)</td><td class="num">8,38</td><td class="num">8,381</td><td><span class="ok">✓✓</span></td></tr>
+          <tr><td>Depresjon etter · pacing</td><td class="num">−0,33</td><td class="num">−0,326</td><td><span class="ok">✓</span></td></tr>
+          <tr><td>Depresjon etter · gradert</td><td class="num">−0,21</td><td class="num">−0,210</td><td><span class="ok">✓✓</span></td></tr>
+          <tr><td>Angst etter · pacing</td><td class="num">−0,26</td><td class="num">−0,261</td><td><span class="ok">✓✓</span></td></tr>
+          <tr><td>Angst etter · gradert</td><td class="num">0,00</td><td class="num">+0,004</td><td><span class="ok">✓</span></td></tr>
+        </tbody>
+        <caption>Tallene reproduserer. Subgruppesplitten («maintain» vs «increase activities») er forhåndsregistrert i PROSPERO CRD42016036087 — post hoc-bekymring avkreftet.</caption>
+      </table></div>
+      <h4>Substansielle funn fra primærdata</h4>
+      <ul style="max-width:46rem">
+        <li class="muted" style="margin-bottom:.5rem">Den større effekten ligger i <strong>gradert-økning-armen</strong> (−0,64), ikke i symptom-kontingent pacing (−0,30) — den GET-nære subgruppen bærer anbefalingen.</li>
+        <li class="muted" style="margin-bottom:.5rem">To <strong>pediatriske</strong> forsøk er poolet med voksne og er blant de sterkeste effektene: Al-Haggar 2006 (g=−1,42), Stulemeijer 2005 (g=−0,90). PROSPERO-kriteriet sier «RCTs involving adults» — dokumentert protokollavvik.</li>
+        <li class="muted" style="margin-bottom:.5rem">White/PACE 2011 ligger i <strong>begge</strong> subgrupper; «kun White er unntak» er upresis (6 «Pacing» vs 9 «Pacing up»).</li>
+        <li class="muted">Casson↔Maas deler <strong>≥7 primær-RCT-er</strong> (Deale 1997, Friedberg 2013, Jason 2007, Knoop 2008, Prins 2001, White 2011, Wiborg 2015) — ikke to uavhengige kilder.</li>
+      </ul>
+      <p class="tiny">PROSPERO-tidslinje: registrert 11.03.2016; «Date of first submission» 23.08.2021; «The review has not started». RoB-verktøy: CONSORT + PEDro (CONSORT er en rapporteringssjekkliste, ikke et RoB-domeneverktøy).</p>
+    </div>
+  </section>
+
+  <section class="section" id="m-anker">
+    <div class="container">
+      <p class="eyebrow">4 · Kildeforankring</p>
+      <h2>Måneder/uker-feilen — fire uavhengige forankringspunkter</h2>
+      <p>Det sterkeste nivå-1-funnet. Utkastet oppgir «fra 14 til 38 <strong>måneder</strong>»; kildene måler i <strong>uker</strong>.</p>
+      <div class="anchor-card"><span class="src">1 · Maas 2024 (primærartikkel)</span>Fotnoten oppgir langtidsoppfølging i uker (størrelsesorden 13–48 uker; snitt ≈ 31,14 uker, SD 12,75).<br><span class="loc">Forankring: fotnote til langtidsanalysen · DOI 10.1007/s12529-023-10254-2</span></div>
+      <div class="anchor-card"><span class="src">2 · Helsedirektoratets egen evidenstabell</span>Evidenstabellen oppgir «14–38 uker» (korrekt enhet) mens brødteksten oppgir «14 til 38 måneder» — intern selvmotsigelse.<br><span class="loc">Forankring: evidenstabell for KAT</span></div>
+      <div class="anchor-card"><span class="src">3 · DEFACTUM (uavhengig dansk oppsummering)</span>Oppgir gjennomsnittlig oppfølging «31 uger» for samme grunnlag.<br><span class="loc">Forankring: DEFACTUM, KAT-/CBT-avsnittet</span></div>
+      <div class="anchor-card"><span class="src">4 · Maas' rådata (OSF wq4gj)</span>Studie-etiketter koder uker: <code>Deale et al., 1997_44w</code>, <code>White et al., 2011_52w</code>. <code>follow-up</code>-kolonnen = 14–48 (uker); &gt;12-mnd-settet: <code>Deale_260w</code>, <code>Huibers_192w</code>, <code>White_120w</code>.<br><span class="loc">Forankring: environment_CFS.RData (reproduserbart, §12)</span></div>
+      <div class="callout care"><h4>Konsekvens</h4><p>Varigheten overdrevet ≈ 4,3× (≈31 uker fremstilt som ≈31 måneder). Uavhengig av all kvalitetsskåring. I de få studiene med &gt;2 års oppfølging (reproduserbart fra <code>data_FUinf</code>) var det ingen signifikant effekt — ikke omtalt i brødteksten.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="m-amstar">
+    <div class="container">
+      <p class="eyebrow">5 · AMSTAR-2 på itemnivå</p>
+      <h2>Kvalitetsvurdering med forsvarsanførsel</h2>
+      <p>Vurdering oppgis side om side med motforestillinger. «Motargument» er det en forsvarer med rimelighet kan anføre.</p>
+      <h3>Casson 2023 — kritiske domener</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>AMSTAR-2-punkt</th><th>Vår skår</th><th>Grunnlag</th><th>Motargument</th></tr></thead>
+        <tbody>
+          <tr><td>2 · Protokoll a priori, avvik begrunnet</td><td><span class="neg">Nei / kritisk</span></td><td>Registrert for voksne; gjennomført med 2 barnestudier (udokumentert avvik); substansiell protokoll innsendt 2021 «not started»</td><td>PROSPERO-ID finnes; subgruppesplitt var pre-registrert</td></tr>
+          <tr><td>9 · RoB-teknikk</td><td><span class="warn">Svakhet</span></td><td>CONSORT (rapporteringssjekkliste) + PEDro som RoB; ikke domeneverktøy à la RoB2</td><td>PEDro er etablert i fysioterapifeltet</td></tr>
+          <tr><td>11 · Metaanalysemetode</td><td><span class="ok">Ja</span></td><td>REML SMD korrekt; reprodusert (§3)</td><td>—</td></tr>
+          <tr><td>7 · Ekskluderingsliste</td><td class="muted">Avventer fulltekst</td><td>Krever betalingsmurt artikkel</td><td>—</td></tr>
+          <tr><td>15 · Publikasjonsskjevhet</td><td class="muted">Avventer fulltekst</td><td>Krever betalingsmurt artikkel</td><td>—</td></tr>
+        </tbody>
+        <caption>Samlet (foreløpig): trekker mot «Kritisk lav». Endelig skår krever punkt 7/15 fra fulltekst.</caption>
+      </table></div>
+      <h3>Maas 2024</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>AMSTAR-2-punkt</th><th>Vår skår</th><th>Grunnlag</th><th>Motargument (vesentlig)</th></tr></thead>
+        <tbody>
+          <tr><td>7 · Ekskluderingsliste m/begrunnelse</td><td><span class="warn">Kritisk svakhet</span></td><td>Fullstendig liste med begrunnelse ikke etablert</td><td><strong>DEFACTUM skåret Maas/Bermpohl «High quality»</strong> — reell inter-rater-divergens (§8)</td></tr>
+          <tr><td>11 · Metaanalysemetode</td><td><span class="ok">Ja</span></td><td>metacont/Hedges/REML korrekt; reprodusert (§2)</td><td>—</td></tr>
+          <tr><td>Samlet</td><td><span class="warn">«Lav»</span></td><td>Drevet av punkt 7</td><td>DEFACTUM: «High». Vår «Lav» er én forsvarlig skåring, ikke entydig fasit</td></tr>
+        </tbody>
+        <caption>AMSTAR-2 har kjent inter-rater-variabilitet, særlig på punkt 7 og 9. Divergensen er anført åpent (§8) og endrer ikke nivå-1-funnene.</caption>
+      </table></div>
+    </div>
+  </section>
+
+  <section class="section" id="m-grade">
+    <div class="container">
+      <p class="eyebrow">6 · GRADE-EtD</p>
+      <h2>Diskordans mellom tillit og anbefalingsstyrke</h2>
+      <p>Utkastet gir en «bør»-anbefaling (sterk retning). Etter GRADE krever en sterk anbefaling på <strong>lav</strong> tillit normalt en av fem paradigmatiske unntakssituasjoner. Ingen av de fem foreligger her.</p>
+      <div class="callout"><h4>Vurdering</h4><p>En «kan vurderes»-formulering eller en forskningsanbefaling er mer forsvarlig gitt lav tillit og fravær av unntak. Nivå-3-vurdering, men hviler på GRADEs eget regelverk.</p></div>
+      <div class="callout care"><h4>Forsvarsanførsel (oppgis bevisst)</h4><p>Utkastets rammeverk vekter klinisk erfaring og brukerverdier eksplisitt sammen med forskningsevidens i Evidence-to-Decision. En forsvarer kan med rette anføre at anbefalingsstyrken reflekterer hele EtD-vurderingen, ikke tillitsnivået isolert. Vår innvending er at avveiningen da bør gjøres eksplisitt og etterprøvbar.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="m-robis">
+    <div class="container">
+      <p class="eyebrow">7 · ROBIS / seleksjon</p>
+      <h2>Seleksjonsasymmetri — dokumentert fra begge lands kildedokumenter</h2>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Oversikt</th><th>DEFACTUM Bilag 2 (AMSTAR-2)</th><th>Utkastets håndtering</th><th>Vår vurdering</th></tr></thead>
+        <tbody>
+          <tr><td>Larun 2019 (GET, Cochrane)</td><td><span class="ok">«High quality» (16/16, item 4 Partial)</span></td><td><span class="neg">Ekskludert</span> etter fulltekst (PICO/heterogenitet)</td><td>Ikke skåret av oss</td></tr>
+          <tr><td>Casson 2023 (aktivitet)</td><td>Ikke vurdert av DEFACTUM</td><td><span class="ok">Inkludert</span> — bærebjelke</td><td>Trekker mot «Kritisk lav» (§5)</td></tr>
+          <tr><td>Kong 2023 (qigong/tai chi)</td><td>Ikke vurdert av DEFACTUM</td><td><span class="ok">Inkludert</span></td><td>Svak: 12-ukers tak, passiv komparator, mest kinesiskspråklige RCT-er</td></tr>
+          <tr><td>Maas/Bermpohl (KAT)</td><td><span class="ok">«High quality»</span></td><td>Inkludert — bærebjelke</td><td>«Lav» (§5; divergens §8)</td></tr>
+        </tbody>
+        <caption>Larun 2019 ble screenet, kvalitetsvurdert og dataekstrahert, så ekskludert etter fulltekst. Eksklusjonen isolert sett forsvarlig; funnet er <strong>inkonsistent terskel</strong>: strengest prøving på den høyest skårede oversikten, mildest på en svakere.</caption>
+      </table></div>
+      <h4>Illustrasjon: samme RCT, to etiketter</h4>
+      <p>White/PACE 2011 telles som <strong>treningsterapi (GET)</strong> i DEFACTUM (via Larun/Bourke) og som <strong>aktivitetsregulering/pacing</strong> i Norge (via Casson). Konklusjonen styres av paraplyoversikt-valget. DEFACTUMs samlede GET-fatigue: 8 studier, 1039 deltakere, SMD −0,63 (95 % KI −0,92;−0,35), I²=77 %.</p>
+      <p class="tiny">Anført som dokumentert metodisk inkonsistens (ROBIS domene 2), eksplisitt ikke som påstand om hensikt.</p>
+    </div>
+  </section>
+
+  <section class="section" id="m-divergens">
+    <div class="container">
+      <p class="eyebrow">8 · Inter-rater-divergens</p>
+      <h2>Hvor vår vurdering avviker fra DEFACTUMs — oppgitt fremst</h2>
+      <p>DEFACTUM Bilag 2 skårer både Larun 2019 og Maas/Bermpohl «High quality». Vår vurdering lander på «Lav» for Maas (drevet av punkt 7). Reell faglig uenighet, oppgitt åpent fordi troverdighet krever det.</p>
+      <h4>Mekanisme</h4>
+      <p>Divergensen springer ut av tolkning av punkt 7 (ekskluderingsliste) og punkt 9 (RoB-teknikk). AMSTAR-2 har dokumentert inter-rater-variabilitet nettopp her. Vår «Lav» er én forsvarlig anvendelse — ikke entydig fasit.</p>
+      <div class="callout fair"><h4>Det avgjørende for en regulator</h4><p>Nivå-1-funnene — måneder/uker (§4) og brødtekst-vs-tabell (§2) — er <strong>uavhengige av all AMSTAR-2-skjønn</strong> og står uendret selv om man fullt ut aksepterer DEFACTUMs «High». Det er funnene som overlever uenighet.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="m-suppl">
+    <div class="container">
+      <p class="eyebrow">7b · Supplerende kilder — primærsjekk</p>
+      <h2>To lavvekts-kilder fra grunnlaget, primærverifisert</h2>
+      <p>To kilder som inngår i utkastets grunnlag var ikke primærverifisert i hovedanalysen. Begge er nå kontrollert mot PubMed. Den ene er substansiell og oppgis åpent fordi den taler <em>mot</em> én av våre innvendinger.</p>
+
+      <h3>Kuut og kolleger 2024 — individdata-metaanalyse (IPD)</h3>
+      <p>Bibliografi bekreftet via PubMed: <em>Does the effect of cognitive behavior therapy for chronic fatigue syndrome (ME/CFS) vary by patient characteristics?</em> Psychol Med. 2024;54(3):447–456. PROSPERO CRD42022358245. Fulltekst ikke åpent tilgjengelig (Cambridge); abstrakt og metadata verifisert.</p>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Hva studien fant</th><th>Vekt mot våre funn</th></tr></thead>
+        <tbody>
+          <tr><td>8 forsøk, 1298 pasienter (IPD). KAT ga bedring på utmattelse, funksjonssvikt og fysisk funksjon. <strong>Ingen indikasjon</strong> på at pasienter med strengere definisjoner eller flere symptomer hadde mindre nytte; forfatterne argumenterer eksplisitt mot å nedgradere ikke-PEM-mandaterende studier.</td><td><span class="neg">Mot funn 3</span> — det sterkeste publiserte mottrekket mot indirekthetsinnvendingen. Innarbeidet som åpen motforestilling i Funn-fanen.</td></tr>
+          <tr><td>PEM undersøkt som <em>moderator</em>, ikke inklusjonskrav; pooler i hovedsak Knoop-/Bleijenberg-nettverkets egne forsøk; interaksjonsanalyser har lav styrke.</td><td><span class="warn">Begrenser mottrekket</span> — fravær av påvist moderasjon ≠ påvist fravær; deler primærstudier og forfatternettverk med Maas/Casson (jf. §3).</td></tr>
+        </tbody>
+        <caption>Netto: svekker, men opphever ikke, indirekthetsforbeholdet (funn 3). Endrer ikke funn 1 (enhetsfeil), funn 2 (komparator) eller funn 4 (varighet) — disse er uavhengige av moderatorspørsmålet.</caption>
+      </table></div>
+
+      <h3>Samper-Pardo og kolleger 2023 — ReCOVery-APP RCT</h3>
+      <p>Bibliografi og fulltekst bekreftet via PubMed (åpen tilgang, CC BY): <em>Effectiveness of a telerehabilitation intervention using ReCOVery APP of long COVID patients.</em> Sci Rep. 2023;13(1):7943. ISRCTN91104012.</p>
+      <ul style="max-width:46rem">
+        <li class="muted" style="margin-bottom:.5rem">Åpen, randomisert studie, 100 <strong>long covid</strong>-pasienter (ikke ME/CFS; MeSH «Post-Acute COVID-19 Syndrome»), app-telerehabilitering + vanlig oppfølging vs. vanlig oppfølging, 3 måneders oppfølging.</li>
+        <li class="muted" style="margin-bottom:.5rem">Primærresultat: <strong>ingen signifikant forskjell</strong> i favør av intervensjonen. Lav etterlevelse (25 % brukte appen substansielt).</li>
+        <li class="muted">Vekt: lav. Liten enkeltstudie, nullresultat, og <strong>post-covid-populasjon uten PEM-krav</strong> — illustrerer indirekthet (jf. funn 3) snarere enn å endre noen konklusjon. Konsistent med funn 4 (beskjeden/ikke-robust effekt).</li>
+      </ul>
+      <div class="callout fair">
+        <h4>Samlet</h4>
+        <p>Primærsjekken endrer ingen kjernekonklusjon. Den viktigste tilføyelsen er at <strong>Kuut 2024 er tatt inn som et åpent motargument</strong> mot funn 3 — det styrker dokumentets balanse at det sterkeste motbeviset står der innvendingen reises, ikke skjult. Begge kilder er lagt til i §11 med PubMed-attribusjon og DOI-lenker.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="m-anbef">
+    <div class="container">
+      <p class="eyebrow">9 · Til Helsedirektoratet</p>
+      <h2>Konkrete, nøytralt formulerte anbefalinger</h2>
+      <p>Formulert konstruktivt og innspill-klart for revisjon av evidensprofilen fram mot endelig retningslinje.</p>
+      <div class="reccard"><div class="rh"><span class="rn">A1</span><h4>Rett enhetsfeilen</h4></div><p>Endre «14 til 38 måneder» til korrekt enhet (uker; ≈14–48, snitt ≈31), i samsvar med egen evidenstabell, Maas-fotnoten, DEFACTUM og rådata.</p></div>
+      <div class="reccard"><div class="rh"><span class="rn">A2</span><h4>Rapporter komparator-stratifiserte estimater</h4></div><p>Oppgi venteliste- vs. aktiv-komparator-effekt (≈−0,76 vs ≈−0,34), ikke kun det poolede tallet.</p></div>
+      <div class="reccard"><div class="rh"><span class="rn">A3</span><h4>Synliggjør populasjons-indirekthet</h4></div><p>Angi at grunnlaget er Oxford/Fukuda/cut-off uten PEM-krav; ingen Canada/NICE-2021. Vurder nedgradering for indirekthet.</p></div>
+      <div class="reccard"><div class="rh"><span class="rn">A4</span><h4>Harmoniser eller begrunn review-terskelen</h4></div><p>Forklar hvorfor en «High quality»-vurdert Cochrane-oversikt ekskluderes mens svakere kilder beholdes for samme domene.</p></div>
+      <div class="reccard"><div class="rh"><span class="rn">A5</span><h4>Bring anbefalingsstyrken i samsvar med GRADE-tilliten</h4></div><p>Ved lav tillit og fravær av de fem unntakene: vurder betinget formulering eller forskningsanbefaling, eller gjør EtD-avveiningen eksplisitt.</p></div>
+      <div class="reccard"><div class="rh"><span class="rn">A6</span><h4>Omtal varighetsbegrensningen</h4></div><p>Inkluder at effekten avtar og at &gt;2-års-oppfølging ikke viser signifikant effekt.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="m-forbehold">
+    <div class="container">
+      <p class="eyebrow">10 · Forbehold og versjonering</p>
+      <h2>Omfang, begrensninger og endringslogg</h2>
+      <ul style="max-width:46rem">
+        <li class="muted" style="margin-bottom:.5rem"><strong>Bekreftet vs. tolkende:</strong> nivå-1/2 etterprøvbart uten faglig skjønn; nivå-3 bygger på etablerte verktøy med rom for uenighet, motargument oppgis konsekvent.</li>
+        <li class="muted" style="margin-bottom:.5rem"><strong>Statistikk:</strong> punktestimater er verifiseringsmål; CI i reimplementeringen er forenklet og skal re-kjøres i R mot originalkoden.</li>
+        <li class="muted" style="margin-bottom:.5rem"><strong>Nettverksobservasjoner</strong> (delte primærstudier, forfatterkoblinger) er anført som faktiske forhold å vurdere — ikke som påstand om uredelighet eller inhabilitet.</li>
+        <li class="muted" style="margin-bottom:.5rem"><strong>Copyright:</strong> korte sitat og presise sidepekere, ikke gjengivelse av avsnitt.</li>
+        <li class="muted"><strong>Gjenstående:</strong> Casson punkt 7/15 avventer betalingsmurt fulltekst. Endelig retningslinje ventet ~10.08.2026 — sjekk re-kjøres da.</li>
+      </ul>
+      <h3>Endringslogg</h3>
+      <div class="changelog">
+        <div class="row"><span class="v">v3</span><span class="d">Verifisering av evidensgrunnlaget; DEFACTUM-kontrast etablert</span></div>
+        <div class="row"><span class="v">v4</span><span class="d">Metodeverktøykasse: AMSTAR-2, GRADE-EtD, RIGHT, ROBIS</span></div>
+        <div class="row"><span class="v">v5 / v5.1</span><span class="d">Casson reprodusert fra OSF; PROSPERO-protokollavvik dokumentert</span></div>
+        <div class="row"><span class="v">v6</span><span class="d">Maas reprodusert fra OSF; måneder/uker firedobbelt bekreftet; øvrig grunnlag</span></div>
+        <div class="row"><span class="v">v6.1</span><span class="d">DEFACTUM Bilag 1–2 kryssjekk; seleksjonsasymmetri dokumentert</span></div>
+        <div class="row"><span class="v">etterarb.</span><span class="d">16.05.2026 · konsolidert formidlings- og metodedokument etter høring</span></div>
+        <div class="row"><span class="v">+7b</span><span class="d">16.05.2026 · Kuut 2024 (IPD) og Samper-Pardo 2023 primærsjekket mot PubMed; Kuut innarbeidet som åpen motforestilling til funn 3</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="m-kilder">
+    <div class="container">
+      <p class="eyebrow">11 · Kilder</p>
+      <h2>Primærkilder med lenker</h2>
+      <ul class="reflist">
+        <li><span class="ref-tag">Bærebjelke · aktivitet</span>Casson S, Jones MD, Cassar J, et al. <em>The effectiveness of activity pacing interventions for people with chronic fatigue syndrome: a systematic review and meta-analysis.</em> Disabil Rehabil. 2022;45(23):3788&ndash;3802.<span class="ref-links"><a href="https://doi.org/10.1080/09638288.2022.2135776" target="_blank" rel="noopener">DOI</a><a href="https://osf.io/bk7t2/" target="_blank" rel="noopener">Åpne data (OSF)</a><a href="https://www.crd.york.ac.uk/prospero/display_record.php?ID=CRD42016036087" target="_blank" rel="noopener">PROSPERO</a></span></li>
+        <li><span class="ref-tag">Bærebjelke · KAT</span>Maas Genannt Bermpohl F, Kucharczyk-Bodenburg AC, Martin A. <em>Efficacy and Acceptance of Cognitive Behavioral Therapy in Adults with Chronic Fatigue Syndrome: A Meta-analysis.</em> Int J Behav Med. 2024;31(6):895&ndash;910.<span class="ref-links"><a href="https://doi.org/10.1007/s12529-023-10254-2" target="_blank" rel="noopener">DOI</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11588766/" target="_blank" rel="noopener">Fulltekst (PMC)</a><a href="https://osf.io/wq4gj/" target="_blank" rel="noopener">Åpne data (OSF)</a></span></li>
+        <li><span class="ref-tag">Øvrig grunnlag</span>Kong L, Ren J, Fang S, et al. <em>Effects of traditional Chinese mind-body exercises for patients with chronic fatigue syndrome: a systematic review and meta-analysis.</em> J Glob Health. 2023;13:04157.<span class="ref-links"><a href="https://doi.org/10.7189/jogh.13.04157" target="_blank" rel="noopener">DOI</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10666566/" target="_blank" rel="noopener">Fulltekst (PMC)</a></span></li>
+        <li><span class="ref-tag">Øvrig grunnlag</span>Zeraatkar D, Ling M, Kirsh S, et al. <em>Interventions for the management of long covid (post-covid condition): living systematic review.</em> BMJ. 2024;387:e081318.<span class="ref-links"><a href="https://doi.org/10.1136/bmj-2024-081318" target="_blank" rel="noopener">DOI</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11600537/" target="_blank" rel="noopener">Fulltekst (PMC)</a><a href="https://osf.io/9h7zm/" target="_blank" rel="noopener">Registrering (OSF)</a></span></li>
+        <li><span class="ref-tag">PEM-bro · enkeltstudie</span>Nerli TF, Selvakumar J, Cvejic E, et al. <em>Brief Outpatient Rehabilitation Program for Post-COVID-19 Condition: A Randomized Clinical Trial.</em> JAMA Netw Open. 2024;7(12):e2450744.<span class="ref-links"><a href="https://doi.org/10.1001/jamanetworkopen.2024.50744" target="_blank" rel="noopener">DOI</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11659907/" target="_blank" rel="noopener">Fulltekst (PMC)</a></span></li>
+        <li><span class="ref-tag">Supplerende · primærsjekk</span>Kuut TA, Buffart LM, Braamse AMJ, Csorba I, Bleijenberg G, Nieuwkerk P, Moss-Morris R, Müller F, Knoop H. <em>Does the effect of cognitive behavior therapy for chronic fatigue syndrome (ME/CFS) vary by patient characteristics? A systematic review and individual patient data meta-analysis.</em> Psychol Med. 2024;54(3):447&ndash;456 (Epub 2023 Nov 6). Individdata-metaanalyse; argumenterer mot nedgradering av ikke-PEM-mandaterende studier (motforestilling til funn 3, §7b).<span class="ref-links"><a href="https://doi.org/10.1017/S0033291723003148" target="_blank" rel="noopener">DOI</a><a href="https://pubmed.ncbi.nlm.nih.gov/37927223/" target="_blank" rel="noopener">PubMed</a></span></li>
+        <li><span class="ref-tag">Supplerende · primærsjekk</span>Samper-Pardo M, León-Herrera S, Oliván-Blázquez B, Méndez-López F, Domínguez-García M, Sánchez-Recio R. <em>Effectiveness of a telerehabilitation intervention using ReCOVery APP of long COVID patients: a randomized, 3-month follow-up clinical trial.</em> Sci Rep. 2023;13(1):7943. Liten long covid-RCT, nullresultat (§7b).<span class="ref-links"><a href="https://doi.org/10.1038/s41598-023-35058-y" target="_blank" rel="noopener">DOI</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10187508/" target="_blank" rel="noopener">Fulltekst (PMC)</a></span></li>
+        <li><span class="ref-tag">Cochrane · via DEFACTUM</span>Larun L, Brurberg KG, Odgaard-Jensen J, Price JR. <em>Exercise therapy for chronic fatigue syndrome.</em> Cochrane Database Syst Rev. 2019. Vurdert «High quality» (AMSTAR-2) i DEFACTUM Bilag 2.<span class="ref-links"><a href="https://doi.org/10.1002/14651858.CD003200.pub8" target="_blank" rel="noopener">DOI</a></span></li>
+        <li><span class="ref-tag">Sammenligningsgrunnlag</span>DEFACTUM (Region Midtjylland) for Sundhedsstyrelsen. Ikke-medisinsk behandling av ME/CFS — inkl. Bilag 1 (studiekarakteristika) og Bilag 2 (kvalitetsvurderinger, AMSTAR-2, forest plots).</li>
+        <li><span class="ref-tag">Høringsdokument</span>Helsedirektoratet. Nasjonal faglig retningslinje for langvarig utmattelse, inkl. ME/CFS — utkast (sak 24/13487): evidenstabeller, PRISMA-flytskjema, liste over ekskluderte artikler.</li>
+      </ul>
+      <p class="ref-note">Bibliografiske opplysninger (forfattere, tidsskrift, volum, sidetall, DOI) er verifisert mot PubMed. Åpne data er hentet fra Open Science Framework (OSF). Larun 2019 er sitert slik den er referert i DEFACTUM; verifiser utgavenummer ved behov.</p>
+    </div>
+  </section>
+
+  <section class="section" id="m-vedlegg">
+    <div class="container">
+      <p class="eyebrow">12 · Vedlegg</p>
+      <h2>Reproduksjonsskript</h2>
+      <p>Skriptene kjører mot de samme OSF-filene og produserer tabellene i §2–§3. Selvstendige og kommenterte, slik at en uavhengig statistiker kan re-kjøre dem (helst også i R mot originalkoden, jf. CI-forbeholdet i §1). Innebygd under, og nedlastbare.</p>
+      <details class="code"><summary>repro_maas.py — Maas/Bermpohl · metacont/Hedges/REML</summary><pre>import pyreadr, math
+d = pyreadr.read_r('environment_CFS.RData')['data'].reset_index(drop=True)
+
+# R 1-indexed row selections from R-script_CFS.R
+post_R   = [1,4,6,8,12,13,15,16,17,19,21,23,25,28,31]
+FU12_R   = [2,5,7,10,14,18,20,22,27,29]
+FUinf_R  = [3,11,30]
+def Rsel(df, ridx): return df.iloc[[i-1 for i in ridx]].reset_index(drop=True)
+data_post = Rsel(d, post_R)
+data_FU12 = Rsel(d, FU12_R)
+data_FUinf= Rsel(d, FUinf_R)
+
+# within-data_post positional selections (1-indexed) per script
+sel = {
+ 'som' : [1,2,3,4,5,7,8,11,12,14,15],
+ 'phs' : [1,2,3,4,5,7,9,11,12,14,15],
+}
+def hedges(m1,s1,n1,m2,s2,n2):
+    sp=math.sqrt(((n1-1)*s1*s1+(n2-1)*s2*s2)/(n1+n2-2))
+    d_=(m1-m2)/sp
+    J=1-3/(4*(n1+n2-2)-1)
+    g=J*d_
+    v=1.0/n1+1.0/n2+g*g/(2*(n1+n2))
+    return g,v
+def reml(y,v):
+    t2=0.0
+    for _ in range(500):
+        w=[1/(vi+t2) for vi in v]; sw=sum(w)
+        mu=sum(wi*yi for wi,yi in zip(w,y))/sw
+        den=sum(wi*wi for wi in w)
+        new=max(0.0,(sum(wi*wi*((yi-mu)**2-vi) for wi,yi,vi in zip(w,y,v))+t2*den)/den)
+        if abs(new-t2)&lt;1e-12: t2=new;break
+        t2=new
+    w=[1/(vi+t2) for vi in v]; sw=sum(w)
+    mu=sum(wi*yi for wi,yi in zip(w,y))/sw
+    se=math.sqrt(1/sw)
+    wf=[1/vi for vi in v]; swf=sum(wf); muf=sum(wi*yi for wi,yi in zip(wf,y))/swf
+    Q=sum(wi*(yi-muf)**2 for wi,yi in zip(wf,y)); df=len(y)-1
+    I2=max(0.0,(Q-df)/Q*100) if Q&gt;0 else 0.0
+    return mu,mu-1.96*se,mu+1.96*se,I2,len(y),t2
+
+def ma(df, oc, rows1, label):
+    sub=df.iloc[[i-1 for i in rows1]].reset_index(drop=True)
+    y=[];v=[]
+    for _,r in sub.iterrows():
+        try:
+            ne=float(r[f'Ne_analysis_{oc}']); nc=float(r[f'Nc_analysis_{oc}'])
+            me=float(r[f'Me_{oc}_post']); sde=float(r[f'SDe_{oc}_post'])
+            mc=float(r[f'Mc_{oc}_post']); sdc=float(r[f'SDc_{oc}_post'])
+        except: continue
+        if any(math.isnan(x) for x in [ne,nc,me,sde,mc,sdc]): continue
+        g,vv=hedges(me,sde,int(ne),mc,sdc,int(nc)); y.append(g);v.append(vv)
+    if not y: print(label,'-- no data'); return
+    mu,lo,hi,I2,k,t2=reml(y,v)
+    print(f"{label:42s} g={mu:+.3f}  CI[{lo:+.3f},{hi:+.3f}]  I2={I2:.1f}%  k={k}")
+
+print("=== POST-TREATMENT (data_post, positional subsets per R) ===")
+ma(data_post,'som',sel['som'],'Fatigue post')
+ma(data_post,'phs',sel['phs'],'PHS post')
+# depression/anxiety post: script selects which rows? find non-NA
+for oc in ['depr','anx']:
+    sub=data_post.copy()
+    rows=[i+1 for i in range(len(sub)) if not (str(sub.iloc[i].get(f'Me_{oc}_post','nan'))=='nan' or (isinstance(sub.iloc[i].get(f'Me_{oc}_post'),float) and math.isnan(sub.iloc[i].get(f'Me_{oc}_post'))))]
+    ma(data_post,oc,rows,f'{oc} post (non-NA k)')
+
+print("\n=== LONG-TERM FOLLOW-UP (data_FU12) ===")
+for oc in ['som','phs','depr','anx']:
+    sub=data_FU12.copy()
+    rows=[i+1 for i in range(len(sub)) if not (isinstance(sub.iloc[i].get(f'Me_{oc}_post'),float) and math.isnan(sub.iloc[i].get(f'Me_{oc}_post')))]
+    ma(data_FU12,oc,rows,f'{oc} long-term FU')
+
+print("\n=== FOLLOW-UP TIMING (the months/weeks question) ===")
+for c in d.columns:
+    cl=c.lower()
+    if cl in ('follow-up','post_assess...5','post_assess...137') or 'assess' in cl and oc=='':
+        pass
+cols_show=['author','year','follow-up','post_assess...5','post_assess...137']
+cols_show=[c for c in cols_show if c in d.columns]
+print('FU12 rows timing:')
+print(data_FU12[cols_show].to_string())
+print('\nFUinf rows timing:')
+print(data_FUinf[cols_show].to_string())
+
+print("\n=== DIAGNOSEKRITERIER (Maas egen ekstraksjon) ===")
+for c in ['diagnosis_criteria','diagnosis_which','diagnosis_how']:
+    if c in d.columns:
+        print(c,':', list(d[c].dropna().unique()))
+print("\nPost-treatment studies diagnosis_criteria:")
+print(data_post[['author','diagnosis_criteria']].to_string())
+
+print("\n=== KONTROLLGRUPPE-SUBGRUPPE (komparator-inflasjon) ===")
+print("control-koder i data_post:", list(data_post['control'].unique()))
+# fatigue post by control type
+sub=data_post.iloc[[i-1 for i in sel['som']]].reset_index(drop=True)
+groups={}
+for _,r in sub.iterrows():
+    try:
+        ne=float(r['Ne_analysis_som']);nc=float(r['Nc_analysis_som'])
+        me=float(r['Me_som_post']);sde=float(r['SDe_som_post'])
+        mc=float(r['Mc_som_post']);sdc=float(r['SDc_som_post'])
+        ctrl=str(r['control'])
+    except: continue
+    if any(math.isnan(x) for x in [ne,nc,me,sde,mc,sdc]): continue
+    g,vv=hedges(me,sde,int(ne),mc,sdc,int(nc))
+    groups.setdefault(ctrl,[]).append((g,vv,r['author']))
+for ctrl,items in groups.items():
+    y=[a for a,_,_ in items];v=[b for _,b,_ in items]
+    if len(y)&gt;=2:
+        mu,lo,hi,I2,k,t2=reml(y,v)
+        print(f"  control='{ctrl}': g={mu:+.3f} CI[{lo:+.3f},{hi:+.3f}] I2={I2:.1f}% k={k}")
+    else:
+        print(f"  control='{ctrl}': k={len(y)} (for lite) studies={[x[2] for x in items]}")
+print("  studier per kontrolltype:")
+for ctrl,items in groups.items():
+    print(f"   {ctrl}: {[x[2] for x in items]}")
+</pre></details>
+      <details class="code"><summary>repro_casson.py — Casson · SMD-subgrupper pac/pacup</summary><pre>import openpyxl, math
+wb = openpyxl.load_workbook('ActPac_data.xlsx', data_only=True)
+ws = wb['ActPac data']
+rows = list(ws.iter_rows(values_only=True))[2:]  # data rows (header at idx1)
+
+def num(x):
+    try: return float(x)
+    except: return None
+
+# metafor SMD (Hedges g, vtype LS) + REML random effects
+def hedges(m1,s1,n1,m2,s2,n2):
+    sp = math.sqrt(((n1-1)*s1*s1 + (n2-1)*s2*s2)/(n1+n2-2))
+    d  = (m1-m2)/sp
+    J  = 1 - 3/(4*(n1+n2-2)-1)
+    g  = J*d
+    v  = 1.0/n1 + 1.0/n2 + g*g/(2*(n1+n2))
+    return g, v
+
+def md(m1,s1,n1,m2,s2,n2):
+    v = s1*s1/n1 + s2*s2/n2
+    return (m1-m2), v
+
+def reml_tau2(y,v):
+    t2=0.0
+    for _ in range(200):
+        w=[1/(vi+t2) for vi in v]
+        sw=sum(w); mu=sum(wi*yi for wi,yi in zip(w,y))/sw
+        num_=sum(wi*wi*((yi-mu)**2 - vi) for wi,yi,vi in zip(w,y,v))
+        den_=sum(wi*wi for wi in w)
+        new=max(0.0,t2+ (num_/den_) ) if den_&gt;0 else 0.0
+        # damped fixed-point (Viechtbauer REML); simple iteration
+        new=max(0.0, (sum(wi*wi*((yi-mu)**2 - vi) for wi,yi,vi in zip(w,y,v)) + t2*den_)/den_)
+        if abs(new-t2)&lt;1e-10: t2=new; break
+        t2=new
+    return t2
+
+def pool(y,v):
+    t2=reml_tau2(y,v)
+    w=[1/(vi+t2) for vi in v]; sw=sum(w)
+    mu=sum(wi*yi for wi,yi in zip(w,y))/sw
+    se=math.sqrt(1/sw)
+    # Q with FE weights
+    wf=[1/vi for vi in v]; swf=sum(wf)
+    muf=sum(wi*yi for wi,yi in zip(wf,y))/swf
+    Q=sum(wi*(yi-muf)**2 for wi,yi in zip(wf,y))
+    df=len(y)-1
+    I2=max(0.0,(Q-df)/Q*100) if Q&gt;0 else 0.0
+    return mu,mu-1.96*se,mu+1.96*se,I2,len(y),t2
+
+def block(flag_i, ma_i, ni,mi,si, nc,mc,sc, measure='SMD', label=''):
+    groups={'Pacing':[],'Pacing up':[]}
+    rowsused=[]
+    for r in rows:
+        if r[0] is None: continue
+        if str(r[flag_i]).strip()=='Yes' and str(r[ma_i]).strip()=='Yes':
+            vals=[num(r[ni]),num(r[mi]),num(r[si]),num(r[nc]),num(r[mc]),num(r[sc])]
+            if any(v is None for v in vals): continue
+            n1,m1,s1,n2,m2,s2=vals
+            g,v=(hedges if measure=='SMD' else md)(m1,s1,int(n1),m2,s2,int(n2))
+            grp=str(r[2]).strip()
+            groups.setdefault(grp,[]).append((g,v))
+            rowsused.append((r[0],r[1],grp,r[3],round(g,3)))
+    print(f"\n=== {label} ({measure}) ===")
+    allg=[g for grp in groups.values() for g,_ in grp]
+    allv=[v for grp in groups.values() for _,v in grp]
+    if allg:
+        mu,lo,hi,I2,k,t2=pool(allg,allv)
+        print(f"  OVERALL : est={mu:+.3f}  95%CI [{lo:+.3f},{hi:+.3f}]  I2={I2:.1f}%  k={k}")
+    for grp in ['Pacing','Pacing up']:
+        gg=groups.get(grp,[])
+        if len(gg)&gt;=1:
+            y=[a for a,_ in gg]; vv=[b for _,b in gg]
+            if len(gg)==1:
+                mu=y[0]; se=math.sqrt(vv[0]); lo,hi,I2,k=mu-1.96*se,mu+1.96*se,0.0,1
+            else:
+                mu,lo,hi,I2,k,t2=pool(y,vv)
+            tag='pacing (oppretthold)' if grp=='Pacing' else 'pacing up (gradert økning)'
+            print(f"  {tag:28s}: est={mu:+.3f}  95%CI [{lo:+.3f},{hi:+.3f}]  I2={I2:.1f}%  k={k}")
+    return rowsused
+
+ru = block(20,21,23,24,25,26,27,28,'SMD','UTMATTELSE — etter intervensjon')
+block(33,34,36,37,38,39,40,41,'MD','FYSISK FUNKSJON — etter (MD)')
+block(59,60,62,63,64,65,66,67,'SMD','DEPRESJON — etter')
+block(72,73,75,76,77,78,79,80,'SMD','ANGST — etter')
+block(85,86,88,89,90,91,92,93,'SMD','UTMATTELSE — oppfølging')
+
+print("\n\n=== Studie-til-subgruppe (utmattelse etter) + aldersgruppe ===")
+for a,y,grp,age,g in ru:
+    print(f"  {str(a):14s} {y}  [{grp:9s}]  {age}  g={g:+.3f}")
+</pre></details>
+      <div class="dl-grid">
+        <a class="dl-card" href="repro_maas.py" download><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span><span><span class="t">repro_maas.py</span><br><span class="s">last ned</span></span></a>
+        <a class="dl-card" href="repro_casson.py" download><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span><span><span class="t">repro_casson.py</span><br><span class="s">last ned</span></span></a>
+      </div>
+      <p class="tiny" style="margin-top:1rem">Avhengigheter: Python 3, <code>pyreadr</code>, <code>openpyxl</code>. Datafiler hentes fra OSF wq4gj (Maas) og bk7t2 (Casson). Ingen rådata er videredistribuert — skriptene laster fra de åpne arkivene.</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-tag">Uavhengig gjennomgang av evidensgrunnlaget i Helsedirektoratets retningslinjeutkast for langvarig utmattelse, inkl. ME/CFS (sak 24/13487). Etterarbeid etter høring (frist 4. mai 2026), ikke et høringssvar levert innen fristen.</div>
+    <div class="footer-version">
+      Status: etterarbeid · 16.05.2026 · Casson AMSTAR-2 punkt 7/15 avventer fulltekst<br>
+      Kilder: forfatternes åpne data/kode (OSF), DEFACTUM Bilag 1&ndash;2, retningslinjens evidenstabeller og flytskjema · bibliografi verifisert mot PubMed<br>
+      Endelig retningslinje ventet ~10.08.2026 · uavhengig dobbeltkontroll (helst re-kjøring i R) anbefales før formelt bruk
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var tt=document.getElementById('theme-toggle');
+    if(tt)tt.addEventListener('click',function(){document.documentElement.classList.toggle('dark');});
+    var tabs=[['tab-funn','panel-funn'],['tab-metode','panel-metode']];
+    function activate(panelId){
+      tabs.forEach(function(p){
+        var btn=document.getElementById(p[0]),pan=document.getElementById(p[1]);
+        var on=(p[1]===panelId);
+        btn.setAttribute('aria-selected',on?'true':'false');
+        if(on){pan.removeAttribute('hidden');}else{pan.setAttribute('hidden','');}
+      });
+      window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
+    }
+    document.getElementById('tab-funn').addEventListener('click',function(){activate('panel-funn');});
+    document.getElementById('tab-metode').addEventListener('click',function(){activate('panel-metode');});
+    document.querySelectorAll('[data-tab]').forEach(function(el){
+      el.addEventListener('click',function(e){
+        e.preventDefault();
+        activate(el.getAttribute('data-tab')==='metode'?'panel-metode':'panel-funn');
+      });
+    });
+    // keyboard arrows on tablist
+    var tl=document.querySelector('.tablist');
+    if(tl)tl.addEventListener('keydown',function(e){
+      if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+      var f=document.getElementById('tab-funn'),m=document.getElementById('tab-metode');
+      var cur=document.activeElement;
+      var nxt=(cur===f)?m:f; nxt.focus(); nxt.click();
+    });
+  })();
+</script>
+</body>
+</html>
